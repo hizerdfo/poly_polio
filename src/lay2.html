@@ -1,0 +1,8 @@
+---
+layout: layout2
+---
+
+{% for post in site.data.person.posts %}
+  <h2>{{ post.title }}</h2>
+  <p>Author: {{ post.author }}</p>
+{% endfor %}
