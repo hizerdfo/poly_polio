@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/home_01.css" type="text/css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@800&display=swap');
+        @import url('https://cdn.rawgit.com/innks/NanumSquareRound/master/nanumsquareround.min.css');
+    </style>
+    <title>도서관 찾기</title>
+</head>
+<body>
+    <div class="container">
+        <div id="left-banner">
+          <br><br><br>
+          <a href="./home01.html" >
+            <img src="/image/list.png" style="height: 55px; margin-left: 10px; padding:10px;" >
+          </a>
+          <a href="./home01.html" >
+            <img src="/image/home.png" style="height: 55px; margin-left: 10px;">
+          </a>
+        </div>
+        <div class="container-body">
+            <div id="top-list">도서관 찾기</div>
+            <div id="top-icon">
+                <img src="/image/refresh.png">
+                <img src="/image/bell.png">
+            </div>
+            <div id="menu-list">
+                <a href="/map.html">전체</a> | <a href="/home02.html">광명시 도서관</a>
+            </div>
+        <br><br><br>
+        <!--카카오맵 지도-->
+        <!-- * 카카오맵 - 지도퍼가기 -->
+        <!-- 1. 지도 노드 -->
+        <div id="daumRoughmapContainer1684904682760" class="root_daum_roughmap root_daum_roughmap_landing"></div>
+
+        <!--
+            2. 설치 스크립트
+            * 지도 퍼가기 서비스를 2개 이상 넣을 경우, 설치 스크립트는 하나만 삽입합니다.
+        -->
+        <script charset="UTF-8" class="daum_roughmap_loader_script" src="https://ssl.daumcdn.net/dmaps/map_js_init/roughmapLoader.js"></script>
+
+        <!-- 3. 실행 스크립트 -->
+        <script charset="UTF-8">
+            new daum.roughmap.Lander({
+                "timestamp" : "1684904682760",
+                "key" : "2ew9h",
+                "mapWidth" : "1000",
+                "mapHeight" : "600"
+            }).render();
+        </script>
+        <br><br>
+        <hr><br><br>
+        <div id="address-text">
+            <img src="/image/placeholder.png" style ="height:45px">
+            <h1>경기 광명시 철망산로 46 (우)14245</h1>
+        </div>
+    </div>
+        
+</body>
+</html>
