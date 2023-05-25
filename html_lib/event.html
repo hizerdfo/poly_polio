@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="css/home_01.css" type="text/css" rel="stylesheet">
+    <link href="css/event.scss" type="text/css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@800&display=swap');
+        @import url('https://cdn.rawgit.com/innks/NanumSquareRound/master/nanumsquareround.min.css');
+    </style>
+    <title>이벤트</title>
+    <script src="https://code.jquery.com/jquery-1.7.2.min.js"></script>
+    <script>
+    $(document).ready(function() {
+        $("#tab-content").find("[id^='tab']").hide(); // Hide all content
+        $("#tabs li:first").attr("id","current"); // Activate the first tab
+        $("#tab-content #tab1").fadeIn(); // Show first tab's content
+
+        $('#tabs a').click(function(e) {
+            e.preventDefault();
+            if ($(this).closest("li").attr("id") == "current"){ //detection for current tab
+            return;
+            }
+            else{
+            $("#tab-content").find("[id^='tab']").hide(); // Hide all content
+            $("#tabs li").attr("id",""); //Reset id's
+            $(this).parent().attr("id","current"); // Activate this
+            $('#' + $(this).attr('name')).fadeIn(); // Show content for the current tab
+            }
+        });
+    });
+</script>
+</head>
+<body>
+    
+    <div class="container">
+        <div id="left-banner">
+            <br><br><br>
+            <a href="./home01.html" >
+                <img src="/image/list.png" style="height: 55px; margin-left: 10px; padding:10px;" >
+            </a>
+            <br><br>
+            <a href="./index.html" >
+                <img src="/image/home.png" style="height: 55px; margin-left: 10px; padding:10px;">
+            </a>
+        </div>
+        <div class="container-body">
+            <div id="top-list">이벤트</div>
+            <div id="top-icon">
+                <img src="/image/refresh.png">
+                <img src="/image/bell.png">
+            </div>
+            <!--버튼 쓸때
+            <div class="event-wrapper">
+                <a href="#" class="event-btn3">
+                    광명시민 [책 한 권] 함께 읽기
+                </a> 
+                <a href="#" class="event-btn3">
+                    [책 한 권] 함께 읽기 프로그램
+                </a>
+                <a href="#" class="event-btn3">
+                    독서 릴레이 신청
+                </a>
+                <a href="#" class="event-btn3">
+                    SNS 챌린지
+                </a>
+                <a href="#" class="event-btn3">
+                    올해의 책 읽고 소감 나누기
+                </a>
+            </div>
+            버튼끝-->
+            <div class="tab-all">
+            
+                <ul id="tabs">
+                    <li><a href="#" name="tab1">광명시민 [책 한 권] 함께 읽기</a></li>
+                    <li><a href="#" name="tab2">[책 한 권] 함께 읽기 프로그램</a></li>
+                    <li><a href="#" name="tab3">독서 릴레이 신청</a></li>
+                    <li><a href="#" name="tab4">SNS 챌린지</a></li>
+                    <li><a href="#" name="tab5">올해의 책 읽고 소감 나누기</a></li>
+                </ul>
+                
+                <div id="tab-content">
+                    <div id="tab1">sdfasdfasdfsdf</div>
+                    <div id="tab2">asdfasdf asdfasdf asdf</div>
+                    <div id="tab3">sdfasdfasdfasdfadf</div>
+                    <div id="tab4">asdfasdfasdfasd</div>
+                    <div id="tab5">asdfasdfasdfasd</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>

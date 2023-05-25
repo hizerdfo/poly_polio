@@ -5,11 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="css/home_01.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@800&display=swap');
         @import url('https://cdn.rawgit.com/innks/NanumSquareRound/master/nanumsquareround.min.css');
     </style>
     <link rel="stylesheet" href="/css/search.css">
+    <script src="/js/script.js" defer></script>
     <title>도서 검색</title>
 </head>
 <body>
@@ -19,8 +21,9 @@
           <a href="./home01.html" >
             <img src="/image/list.png" style="height: 55px; margin-left: 10px; padding:10px;" >
           </a>
+          <br><br>
           <a href="./home01.html" >
-            <img src="/image/home.png" style="height: 55px; margin-left: 10px;">
+            <img src="/image/home.png" style="height: 55px; margin-left: 10px; padding:10px;">
           </a>
         </div>
         <div class="container-body">
@@ -43,8 +46,85 @@
         <hr>
         <div class="recommand">
             <h1>추천도서</h1>
+            <div class="wrapper">
+                <i id="left" class="fa-solid fa-angle-left"></i>
+                <div class="carousel">
+                <img src="/image/books/1.jpg" alt="img" draggable="false">
+                <img src="/image/books/2.jpg" alt="img" draggable="false">
+                <img src="/image/books/3.jpg" alt="img" draggable="false">
+                <img src="/image/books/4.jpg" alt="img" draggable="false">
+                <img src="/image/books/4.jpg" alt="img" draggable="false">
+                <img src="/image/books/4.jpg" alt="img" draggable="false">
+                <img src="/image/books/4.jpg" alt="img" draggable="false">
+                <img src="/image/books/4.jpg" alt="img" draggable="false">
+                <img src="/image/books/4.jpg" alt="img" draggable="false">
+                <img src="/image/books/4.jpg" alt="img" draggable="false">
+                <img src="/image/books/4.jpg" alt="img" draggable="false">
+                <img src="/image/books/4.jpg" alt="img" draggable="false">
+                </div>
+                <i id="right" class="fa-solid fa-angle-right"></i>
+            </div>
+            
+            <h1>인기도서</h1>
+            <div class="wrapper">
+                <i id="left" class="fa-solid fa-angle-left"></i>
+                <div class="carousel">
+                <img src="/image/books/1.jpg" alt="img" draggable="false">
+                <img src="/image/books/2.jpg" alt="img" draggable="false">
+                <img src="/image/books/3.jpg" alt="img" draggable="false">
+                <img src="/image/books/4.jpg" alt="img" draggable="false">
+                <img src="/image/books/4.jpg" alt="img" draggable="false">
+                <img src="/image/books/4.jpg" alt="img" draggable="false">
+                <img src="/image/books/4.jpg" alt="img" draggable="false">
+                <img src="/image/books/4.jpg" alt="img" draggable="false">
+                <img src="/image/books/4.jpg" alt="img" draggable="false">
+                <img src="/image/books/4.jpg" alt="img" draggable="false">
+                <img src="/image/books/4.jpg" alt="img" draggable="false">
+                <img src="/image/books/4.jpg" alt="img" draggable="false">
+                </div>
+                <i id="right" class="fa-solid fa-angle-right"></i>
+            </div>
+
+            <h1>신작도서</h1>
+            <div class="wrapper">
+                <i id="left" class="fa-solid fa-angle-left"></i>
+                <div class="carousel">
+                <img src="/image/books/1.jpg" alt="img" draggable="false">
+                <img src="/image/books/2.jpg" alt="img" draggable="false">
+                <img src="/image/books/3.jpg" alt="img" draggable="false">
+                <img src="/image/books/4.jpg" alt="img" draggable="false">
+                <img src="/image/books/4.jpg" alt="img" draggable="false">
+                <img src="/image/books/4.jpg" alt="img" draggable="false">
+                <img src="/image/books/4.jpg" alt="img" draggable="false">
+                <img src="/image/books/4.jpg" alt="img" draggable="false">
+                <img src="/image/books/4.jpg" alt="img" draggable="false">
+                <img src="/image/books/4.jpg" alt="img" draggable="false">
+                <img src="/image/books/4.jpg" alt="img" draggable="false">
+                <img src="/image/books/4.jpg" alt="img" draggable="false">
+                </div>
+                <i id="right" class="fa-solid fa-angle-right"></i>
+            </div>
+
+            <div class="imgHoverEvent event7">
+                <div class="imgBox"><img src="https://cdn.pixabay.com/photo/2022/07/10/19/28/mountains-7313638_960_720.jpg" alt=""> </div>
+                <div class="hoverBox">
+                    <span>
+                        <p class="p1">title</p>
+                        <p class="p2">내용내용내용내용</p>
+                    </span>
+                </div>
+            </div>
+
+            <div data-lit-hue='900' data-lit-count='100' class='lit-container'>
+                <div class='minimal element-1'> </div>
+            </div>
+
+
+            <div>
         </div>
+        
         </div>
     </div>
+
 </body>
 </html>
