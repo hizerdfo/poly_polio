@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<!-- saved from url=(0066)https://gmlib.gm.go.kr/front/index.php?g_page=event&m_page=event16 -->
+<html lang="ko" style="" class=" js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers no-applicationcache svg inlinesvg smil svgclippaths"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>광명시민 「책 한 권」 함께 읽기 - 광명시민 「책 한 권」 함께 읽기 - 문화행사 -  광명시도서관</title>
+<meta name="naver-site-verification" content="fa8d9cb0698b9a07df48f9cb22e6a427e5845108">
+<meta name="subject" content="광명시도서관 홈페이지">
+<meta name="description" content="광명시도서관 홈페이지입니다.">
+<meta name="keywords" content="광명시도서관">
+<meta name="copyright" content="광명시도서관">
+<meta http-equiv="Expires" content="-1">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Cache-Control" content="No-Cache">
+
+<meta name="apple-mobile-web-app-capable" content="no">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="광명시도서관">
+<meta property="og:description" content="광명시도서관">
+<meta property="og:image" content="">
+<meta property="og:url" content="">
+
+
+<link rel="stylesheet" href="./1_files/icon-font.min.css">
+<link rel="shortcut icon" href="https://gmlib.gm.go.kr/appicon/favicon.ico?v=2">
+
+<link rel="stylesheet" href="./1_files/fullpage.css">
+<link rel="stylesheet" href="./1_files/common.css">
+<link rel="stylesheet" href="./1_files/layout.css">
+<link rel="stylesheet" href="./1_files/mobile.css" media="screen and (max-width:767px)">
+<link rel="stylesheet" href="./1_files/tablet.css" media="screen and (min-width:768px) and (max-width:1199px)">
+<link rel="stylesheet" href="./1_files/desktop.css" media="screen and (min-width:1200px)">
+<link rel="stylesheet" href="./1_files/jquery-ui.min.css">
+<link rel="stylesheet" href="./1_files/swiper.css">
+<link rel="stylesheet" href="./1_files/slick.css">
+<link rel="stylesheet" href="./1_files/font-awesome.min.css">
+
+<script src="./1_files/jquery-1.10.1.min.js.다운로드"></script>
+<script src="./1_files/jquery-ui.min.js.다운로드"></script>
+<script src="./1_files/jquery.cookie.js.다운로드"></script>
+<script src="./1_files/jquery.animate.min.js.다운로드"></script>
+<script src="./1_files/ajax.js.다운로드"></script>
+<script src="./1_files/jquery.bxslider.js.다운로드"></script>
+<script src="./1_files/modernizr.min.js.다운로드"></script>
+<script src="./1_files/placeholder.js.다운로드"></script>
+<script src="./1_files/default.js.다운로드"></script>
+<script src="./1_files/default.js(1).다운로드"></script>
+<script src="./1_files/jquery.cycle2.js.다운로드"></script>
+<script src="./1_files/swiper.min.js.다운로드"></script>
+<script src="./1_files/slick.min.js.다운로드"></script>
+<script>
+function setCookie( name, value, expiredays ) {
+	var todayDate = new Date();
+		todayDate.setDate( todayDate.getDate() + expiredays );
+		document.cookie = name + "=" + escape( value ) + "; path=/; expires=" + todayDate.toGMTString() + ";"
+	}
+
+function closeWin() {
+	if ( document.notice_form.chkbox.checked ){
+		setCookie( "maindiv", "done" , 1 );
+	}
+	document.all['divpop'].style.visibility = "hidden";
+}
+</script>
+<script>
+//<![CDATA[
+	function wjContentsLink(type){
+		//	alert('로그인 후 이용 가능 합니다.');
+		if(confirm('로그인 후 이용가능 합니다. 로그인 페이지로 이동하시겠습니까?')) location.href="./index.php?g_page=member&m_page=member01&returnUrl=L2Zyb250L2luZGV4LnBocD9nX3BhZ2U9ZXZlbnQmbV9wYWdlPWV2ZW50MTY=";
+		//location.href="./index.php?g_page=member&m_page=member01&returnUrl=L2Zyb250L2luZGV4LnBocD9nX3BhZ2U9ZXZlbnQmbV9wYWdlPWV2ZW50MTY=";
+		return false;
+		window.open('../contentsSso.php?type=' + type);
+	}
+//]]>
+</script>
+<script>
+
+</script>
+<script>
+	$(function() {
+		$("#dkleft .depth1").click(function(){
+			$(this).siblings().removeClass("sel");
+			$(".depth2").slideUp();
+			if(!$(this).removeClass("sel").next().is(":visible"))
+			{
+				$(this).addClass("sel");
+				$(this).next().slideDown();
+			}
+		});
+		dkitsnap.start("dkleft","Wrap");
+	});
+</script>
+
+
+<script>
+//컨텐츠 SSO 로그인
+function wjContentsSso(form)
+{
+	alert("로그인필요한 서비스 입니다. 로그인을 해주세요.");
+	return;
+	
+	$form = $("<form/>").attr({action:"../contentsSso.php?part=" + form,target:"_blank", id:"ssoForm", method:'POST'});
+	$(document.body).append($form);
+	$form.submit();
+}
+
+
+function wjUserMod(_url){
+	alert('로그인을 해주세요'); 
+	return false;
+}
+</script></head>
+<body style="position: relative;">
+<form method="get" name="contentsSso" action="https://gmlib.gm.go.kr/contentsSso.php" target="_blank">
+<input type="hidden" name="_target" value="">
+</form>
+
+<!-- 팝업창 -->
+<!-- // 팝업창 -->
+
+<div id="skipBtnWrap">
+	<a href="https://gmlib.gm.go.kr/front/index.php?g_page=event&amp;m_page=event16#design">본문 바로가기</a>
+</div>
+
+
+<script>
+//<![CDATA[
+	$(function()  {
+		$('.popupbar').bxSlider({
+			mode:'horizontal',
+			speed:200,
+			autoHover:true,
+			controls:true,
+			auto:true,
+			autoControls:false,
+			pager:true
+		});
+	});
+//]]>
+</script>
+<div id="popupbar">
+	<div class="bx-wrapper" style="max-width: 100%;"><div class="bx-viewport" style="width: 100%; position: relative; overflow: hidden; height: 0px;"><div class="popupbar" style="width: 415%; position: relative; transition-duration: 0s; transform: translate3d(0px, 0px, 0px);"><div class="slide bx-clone" style="float: left; list-style: none; position: relative; width: 100px;">
+			<div class="holidays">
+				<h3>오늘은 _META_TITLE_ 휴관일입니다.</h3>
+				<div class="close">
+				<form method="post" action="https://gmlib.gm.go.kr/front/inc/cookie.php">
+					<input type="hidden" value="" name="url">
+					<input value="today" name="today" type="hidden">
+					<button type="submit">X 오늘 더 이상 보이지 않기</button>
+				</form>
+				</div>
+			</div>
+		</div>
+
+		<div class="slide" style="float: left; list-style: none; position: relative; width: 100px;">
+			<div class="holidays">
+				<h3>오늘은 _META_TITLE_ 휴관일입니다.</h3>
+				<div class="close">
+				<form method="post" action="https://gmlib.gm.go.kr/front/inc/cookie.php">
+					<input type="hidden" value="" name="url">
+					<input value="today" name="today" type="hidden">
+					<button type="submit">X 오늘 더 이상 보이지 않기</button>
+				</form>
+				</div>
+			</div>
+		</div>
+				<div class="slide" style="float: left; list-style: none; position: relative; width: 100px;">
+			<div class="holidays">
+				<h3>오늘은 _META_TITLE_ 휴관일입니다.</h3>
+				<div class="close">
+				<form method="post" action="https://gmlib.gm.go.kr/front/inc/cookie.php">
+					<input type="hidden" value="" name="url">
+					<input value="today" name="today" type="hidden">
+					<button type="submit">X 오늘 더 이상 보이지 않기</button>
+				</form>
+				</div>
+			</div>
+		</div>
+		
+	<div class="slide bx-clone" style="float: left; list-style: none; position: relative; width: 100px;">
+			<div class="holidays">
+				<h3>오늘은 _META_TITLE_ 휴관일입니다.</h3>
+				<div class="close">
+				<form method="post" action="https://gmlib.gm.go.kr/front/inc/cookie.php">
+					<input type="hidden" value="" name="url">
+					<input value="today" name="today" type="hidden">
+					<button type="submit">X 오늘 더 이상 보이지 않기</button>
+				</form>
+				</div>
+			</div>
+		</div></div></div><div class="bx-controls bx-has-pager bx-has-controls-direction"><div class="bx-pager bx-default-pager"><div class="bx-pager-item"><a href="https://gmlib.gm.go.kr/front/index.php?g_page=event&amp;m_page=event16" data-slide-index="0" class="bx-pager-link">1</a></div><div class="bx-pager-item"><a href="https://gmlib.gm.go.kr/front/index.php?g_page=event&amp;m_page=event16" data-slide-index="1" class="bx-pager-link active">2</a></div></div><div class="bx-controls-direction"><a class="bx-prev" href="https://gmlib.gm.go.kr/front/index.php?g_page=event&amp;m_page=event16">Prev</a><a class="bx-next" href="https://gmlib.gm.go.kr/front/index.php?g_page=event&amp;m_page=event16">Next</a></div></div></div>
+	<i class="b1"></i>
+	<i class="b2"></i>
+</div>
+
+
+<!--#Wrap-->
+<div id="Wrap" style="z-index: 100; background: rgb(255, 255, 255); position: relative;">
+	<header id="header">
+		<div class="header">
+			<h1><a href="https://gmlib.gm.go.kr/front/">광명시도서관 Gwangmyeong Municipal Library</a></h1>
+			<div class="h_right">
+				<nav class="menu_wrap">
+					<button class="btn btn-menu mocate"><i class="fa fa-bars"></i></button>
+					<div id="gnb">
+						<h2 class="skip">주 메뉴</h2>
+												<div class="gnb">
+							<ul class="depth1">
+																<li class="g1 "><a href="https://gmlib.gm.go.kr/front/index.php?g_page=intro&amp;m_page=intro01_03" class="m1">도서관안내<em></em></a>
+																			<ul class="depth2">
+																					<li><a href="https://gmlib.gm.go.kr/front/index.php?g_page=intro&amp;m_page=intro01_03">도서관발자취</a></li>
+																					<li><a href="https://gmlib.gm.go.kr/front/index.php?g_page=intro&amp;m_page=intro02_01_03">도서관 현황</a></li>
+																					<li><a href="https://gmlib.gm.go.kr/front/index.php?g_page=intro&amp;m_page=intro09_01_03">이용안내</a></li>
+																					<li><a href="https://gmlib.gm.go.kr/front/index.php?g_page=intro&amp;m_page=intro04_01_03">실별안내</a></li>
+																					<li><a href="https://gmlib.gm.go.kr/front/index.php?g_page=intro&amp;m_page=intro05_03">편의시설안내</a></li>
+																					<li><a href="https://gmlib.gm.go.kr/front/index.php?g_page=intro&amp;m_page=intro06">찾아오시는길</a></li>
+																					<li><a href="https://gmlib.gm.go.kr/front/index.php?g_page=intro&amp;m_page=intro08">작은도서관</a></li>
+																				</ul>
+																</li>
+																<li class="g2 "><a href="https://gmlib.gm.go.kr/front/index.php?g_page=search&amp;m_page=search01" class="m1">자료정보·검색<em></em></a>
+																			<ul class="depth2">
+																					<li><a href="https://gmlib.gm.go.kr/front/index.php?g_page=search&amp;m_page=search01">자료검색</a></li>
+																					<li><a href="https://gmlib.gm.go.kr/front/index.php?g_page=search&amp;m_page=search02">새로들어온책</a></li>
+																					<li><a href="https://gmlib.gm.go.kr/front/index.php?g_page=search&amp;m_page=search03">스마트도서관 검색</a></li>
+																					<li><a href="https://gmlib.gm.go.kr/front/index.php?g_page=search&amp;m_page=search08">전자도서관</a></li>
+																					<li><a href="https://gmlib.gm.go.kr/front/index.php?g_page=search&amp;m_page=search06">광명시도서관 대출베스트</a></li>
+																					<li><a href="https://gmlib.gm.go.kr/front/index.php?g_page=search&amp;m_page=search07">전국도서관 대출베스트</a></li>
+																					<li><a href="https://gmlib.gm.go.kr/front/index.php?g_page=search&amp;m_page=search09">정기간행물 목록</a></li>
+																				</ul>
+																</li>
+																<li class="g3  sel"><a href="https://gmlib.gm.go.kr/front/index.php?g_page=event&amp;m_page=event01" class="m1">문화행사<em></em></a>
+																			<ul class="depth2">
+																					<li><a href="https://gmlib.gm.go.kr/front/index.php?g_page=event&amp;m_page=event01">이달의 도서관</a></li>
+																					<li><a href="https://gmlib.gm.go.kr/front/index.php?g_page=event&amp;m_page=event02">문화행사게시판</a></li>
+																					<li><a href="https://gmlib.gm.go.kr/front/index.php?g_page=event&amp;m_page=event14">문화행사 신청</a></li>
+																					<li><a href="https://gmlib.gm.go.kr/front/index.php?g_page=event&amp;m_page=event15">책축제</a></li>
+																					<li><a href="https://gmlib.gm.go.kr/front/index.php?g_page=event&amp;m_page=event16">광명시민 「책 한 권」 함께 읽기</a></li>
+																				</ul>
+																</li>
+																<li class="g4 "><a href="https://gmlib.gm.go.kr/front/index.php?g_page=service&amp;m_page=service01" class="m1">이용자서비스<em></em></a>
+																			<ul class="depth2">
+																					<li><a href="https://gmlib.gm.go.kr/front/index.php?g_page=service&amp;m_page=service01">상호대차서비스</a></li>
+																					<li><a href="https://gmlib.gm.go.kr/front/index.php?g_page=service&amp;m_page=service10">책이음서비스</a></li>
+																					<li><a href="https://gmlib.gm.go.kr/front/index.php?g_page=service&amp;m_page=service13">대출·반납</a></li>
+																					<li><a href="https://gmlib.gm.go.kr/front/index.php?g_page=service&amp;m_page=service02">희망도서신청</a></li>
+																					<li><a href="https://gmlib.gm.go.kr/front/index.php?g_page=test&amp;inc=baro_login" target="_blank" title="새창">지역서점바로대출</a></li>
+																					<li><a href="https://gmlib.gm.go.kr/front/index.php?g_page=service&amp;m_page=service14">대출편의서비스</a></li>
+																					<li><a href="https://gmlib.gm.go.kr/front/index.php?g_page=service&amp;m_page=service15">북스타트</a></li>
+																				</ul>
+																</li>
+																<li class="g5 "><a href="https://gmlib.gm.go.kr/front/index.php?g_page=open&amp;m_page=open01" class="m1">열린공간<em></em></a>
+																			<ul class="depth2">
+																					<li><a href="https://gmlib.gm.go.kr/front/index.php?g_page=open&amp;m_page=open01">공지사항</a></li>
+																					<li><a href="https://gmlib.gm.go.kr/front/index.php?g_page=open&amp;m_page=open02">열린소리함</a></li>
+																					<li><a href="https://gmlib.gm.go.kr/front/index.php?g_page=open&amp;m_page=open03">참여마당</a></li>
+																					<li><a href="https://gmlib.gm.go.kr/front/index.php?g_page=open&amp;m_page=open06_03">동아리 안내</a></li>
+																					<li><a href="https://gmlib.gm.go.kr/front/index.php?g_page=open&amp;m_page=open04">설문조사</a></li>
+																				</ul>
+																</li>
+																<li class="g6 "><a href="https://gmlib.gm.go.kr/front/index.php?g_page=mypage&amp;m_page=mypage01" class="m1">나의 도서관<em></em></a>
+																			<ul class="depth2">
+																					<li><a href="https://gmlib.gm.go.kr/front/index.php?g_page=mypage&amp;m_page=mypage01">내서재</a></li>
+																					<li><a href="https://gmlib.gm.go.kr/front/index.php?g_page=mypage&amp;m_page=mypage02">문화행사 신청내역</a></li>
+																					<li><a href="https://gmlib.gm.go.kr/front/index.php?g_page=mypage&amp;m_page=mypage03">희망도서 신청내역</a></li>
+																					<li><a href="https://gmlib.gm.go.kr/front/index.php?g_page=mypage&amp;m_page=mypage05&amp;appPart=culture">책축제 신청내역</a></li>
+																					<li><a href="https://gmlib.gm.go.kr/dls_lu/member/index.php?act=joinAct&amp;step=userJoin">기본정보</a></li>
+																				</ul>
+																</li>
+															</ul>
+						</div>
+						<div class="nav_bg"></div>
+					</div>
+				</nav>
+				<div class="etc_wp">
+					<div class="etc_btn">
+						<ul>
+													<li class="etc_select"><a href="https://gmlib.gm.go.kr/front/index.php?g_page=event&amp;m_page=event16#" title="하위메뉴 있음">로그인</a>
+								<ul>
+									<li class="etc01"><a href="https://gmlib.gm.go.kr/front/index.php?g_page=member&amp;m_page=member01&amp;returnUrl=L2Zyb250L2luZGV4LnBocD9nX3BhZ2U9ZXZlbnQmbV9wYWdlPWV2ZW50MTY=">로그인</a></li><li>
+									</li><li class="etc02"><a href="https://gmlib.gm.go.kr/dls_lu/">회원가입</a></li>
+								</ul>
+							</li>
+												</ul>
+					</div>
+					<button class="search">검색하기</button>
+					<script>
+						function wjSearchCheckH(f)
+						{
+							if(!f.searchWord.value){
+								alert('검색어를 적어주세요.'); f.searchWord.focus(); return false;
+							}
+						}
+					</script>
+					<div id="topSearchWp">
+						<form method="get" name="searchForm_h" action="https://gmlib.gm.go.kr/front/index.php" onsubmit="return wjSearchCheckH(this);">
+						<input type="hidden" name="g_page" value="search">
+						<input type="hidden" name="m_page" value="search01">
+							<fieldset>
+								<label for="topSearch" class="label_st">자료검색</label>
+								<input id="topSearch" type="text" name="searchWord" placeholder="검색어를 입력해주세요" onfocus="this.value=&#39;&#39;;this.className=&#39;box&#39;" onblur="if (this.value.length==0) {this.className=&#39;box&#39;;}" title="검색어를 입력해주세요">
+								<button type="submit" class="btn_search">검색하기</button>
+							</fieldset>
+							<a href="https://gmlib.gm.go.kr/front/index.php?g_page=event&amp;m_page=event16#" class="close">검색창 닫기</a>
+						</form>
+					</div>
+					<a href="https://gmlib.gm.go.kr/front/index.php?g_page=etc&amp;m_page=etc01" class="sitemap">사이트맵</a>
+				</div>
+			</div>
+		</div>
+	</header>
+	<div id="allbg"></div>
+<div id="contain">
+		<div id="subVisual">
+		<div class="sub_visual visual_event">
+			<div class="visual">
+
+	<p class="sub_slogan">책 속에서 만나는 <strong>즐거운 오늘, 빛나는 미래</strong></p>
+	<script>
+		function bookmarksite(title,url) {
+		   // Internet Explorer
+		   if(document.all)
+		   {
+			   window.external.AddFavorite(url, title);
+		   }
+		   // Google Chrome
+		   else if(window.chrome){
+			  alert("Ctrl+D키를 누르시면 즐겨찾기에 추가하실 수 있습니다.");
+		   }
+		   // Firefox
+		   else if (window.sidebar) // firefox
+		   {
+			   window.sidebar.addPanel(title, url, "");
+		   }
+		   // Opera
+		   else if(window.opera && window.print)
+		   { // opera
+			  var elem = document.createElement('a');
+			  elem.setAttribute('href',url);
+			  elem.setAttribute('title',title);
+			  elem.setAttribute('rel','sidebar');
+			  elem.click();
+		   }
+		}
+		$(function() {
+			$('.share_sns').click(function(){
+				var state = $('#share-lay').css('display');
+				if(state == 'none'){
+					$('#share-lay').slideDown();
+					$('.sb_quick .no02 > a').addClass('on');
+				}else{
+					$('#share-lay').slideUp();
+					$('.sb_quick .no02 > a').removeClass('on');
+				}
+			});
+		});
+		function onShareSns(kind){
+			var openWindow = window.open("about:blank");
+			if(kind == "fb"){
+				openWindow.location.href="http://www.facebook.com/sharer/sharer.php?u="+$(location).attr('href');
+			}else if(kind == "tw"){
+				openWindow.location.href="https://twitter.com/intent/tweet?url="+$(location).attr('href');
+			}else if(kind == "blog"){
+				openWindow.location.href="http://blog.naver.com/openapi/share?url="+$(location).attr('href');
+			}else{
+				alert("공유에 실패하였습니다.\n관리자에게 문의하세요.");
+			}
+		}
+	</script>
+
+	
+</div><!-- // .visual -->
+
+		</div>
+	</div>
+
+	
+	<div class="contain">
+		<div id="aside">
+			<div class="event">
+	<h2>문화행사</h2>
+	<ul>
+		<li class="side2m1 ">
+
+		<a href="https://gmlib.gm.go.kr/front/index.php?g_page=event&amp;m_page=event01">이달의 도서관</a>
+
+				</li>
+			<li class="side2m2 ">
+
+		<a href="https://gmlib.gm.go.kr/front/index.php?g_page=event&amp;m_page=event02">문화행사게시판</a>
+
+				</li>
+			<li class="side2m3 ">
+
+		<a href="https://gmlib.gm.go.kr/front/index.php?g_page=event&amp;m_page=event14">문화행사 신청</a>
+
+				</li>
+			<li class="side2m4 ">
+
+		<a href="https://gmlib.gm.go.kr/front/index.php?g_page=event&amp;m_page=event15">책축제</a>
+
+		</li>		<li class="side2m5 sel">
+
+		<a href="https://gmlib.gm.go.kr/front/index.php?g_page=event&amp;m_page=event16">광명시민 「책 한 권」 함께 읽기</a>
+
+		</li>		</ul>
+
+
+</div>		</div>
+
+		<div class="subtit_area">
+			<h1>광명시민 「책 한 권」 함께 읽기</h1>
+			
+			<div class="web_locator"><span class="home">홈</span>
+				<span class="wdepth">문화행사</span>
+				<span class="wdepth">광명시민 「책 한 권」 함께 읽기</span>
+				<span class="wdepth">광명시민 「책 한 권」 함께 읽기</span>			</div>	
+		</div>
+
+		<div id="design">
+			<div id="content">
+				
+				<div class="event">
+
+
+<div class="tabmenu">
+	<ul>
+		<li id="ctab4m1"><a href="https://gmlib.gm.go.kr/front/index.php?g_page=event&amp;m_page=event16" title="선택 됨" class="sel">광명시민 「책 한 권」 함께 읽기<i>*</i></a></li>
+		<li id="ctab4m2"><a href="https://gmlib.gm.go.kr/front/index.php?g_page=event&amp;m_page=event16_03">「책 한 권」 함께 읽기 연계프로그램<i>*</i></a></li>
+		<li id="ctab4m3"><a href="https://gmlib.gm.go.kr/front/index.php?g_page=event&amp;m_page=event16_04">독서릴레이 신청<i>*</i></a></li>
+		<li id="ctab4m4"><a href="https://gmlib.gm.go.kr/front/index.php?g_page=event&amp;m_page=event16_05">SNS 챌린지<i>*</i></a></li>
+		<li id="ctab4m5"><a href="https://gmlib.gm.go.kr/front/index.php?g_page=event&amp;m_page=event16_02">올해의 책 읽고 소감 나누기<i>*</i></a></li>
+	</ul>
+</div>
+
+
+
+<div class="bookBox">
+	<div class="booBoxs">
+		<span>같은 책을 읽어도 사람마다 다른 생각, 다른 느낌을 받듯이 함께 읽고 시민 여러분의 반짝이는 생각과 다양한 경험을 나누며 서로 소통하고 이해하는 미래를 만들고자 합니다.</span>
+		<strong>「책 한 권」 함께 하시겠습니까?</strong>
+	</div>
+</div>
+
+<div class="txtBox01 txtIcon27">
+    <div class="tit">‘광명시민 「책 한 권」 함께 읽기’ 란?</div>
+    <p>광명시 올해의 책으로 선정된 책을 시민 개개인의 ‘혼자 읽기’가 아닌 시민 여러분과 ‘함께 읽고’, ‘함께 소통과 토론’을 통해 다양한 생각과 경험을 나누며 작가의 대화 등 풍성한 「책 한 권」 함께 읽기 후속 프로그램을 진행하면서 책으로 하나되는 독서문화공동체를 만들어가는 사회적 독서운동입니다.<br><br>올해의 책을 선정하기 위해 광명시 올해의 책 선정위원회에서는 2023년 심의를 거쳐 후보도서 6권을 추천하였으며, 시민선호도 조사를 통해 분야별 최종 1권씩을 선정하였습니다. 독서를 통해 서로 소통하고 문화적 경험을 공유하며 광명시민의 일원으로 하나가 되어 함께 성장하는 광명시민 「책 한 권」 함께 읽기 사업에 대한 시민 여러분의 많은 관심과 참여 바랍니다. </p>
+</div>
+
+<br>
+
+<!--<h2>‘2023년 광명시민 한 책’ 선정을 위한 시민선호도 조사</h2>
+<p class="sub_title">광명시민이 함께 읽고, 함께 토론하며, 함께 소통하고 싶은 올해의 ‘광명시민 한 책’을 시민투표로 직접 뽑아주세요!!</p>
+<ul class="con01">
+	<li>기간 : 2023. 3. 31.(금) ~ 4. 9.(일)</li>
+	<li>대상 : 광명시민 누구나</li>
+	<li>참여방법 : 일반·청소년/어린이 분야 후보도서 중 각 1권씩 투표 
+		<ul>
+			<li>온라인 : 광명시도서관 홈페이지 접속(열린공간-설문조사 메뉴)</li>
+			<li>오프라인 : 공공도서관에 설치된 시민투표판 참여(스티커 부착)</li>
+		</ul>
+	</li>	
+</ul>
+<div class="btn_area tac"><a href="https://gmlib.gm.go.kr/front/index.php?g_page=open&m_page=open04&vtCode=119" class="btn_Mstyle">시민투표 참여하기 클릭</a></div>
+
+<br><br>
+
+<div class="subCnt">
+	<h3>일반ㆍ청소년 후보 도서</h3>
+	 <table class="tstyle">
+		<caption>일반ㆍ청소년 후보 도서</caption>
+		<tbody>
+			<tr>
+				<td><img src="../front/img/img_book2023_ad1.jpg" alt="어서오세요. 휴남동 서점입니다."><p class="title mt10">어서오세요. 휴남동 서점입니다. (황보름)</p></td>
+				<td><img src="../front/img/img_book2023_ad2.jpg" alt="튜브"><p class="title mt10">튜브 (손원평)</p></td>
+				<td><img src="../front/img/img_book2023_ad3.jpg" alt="나의 아름다운 할머니"><p class="title mt10">나의 아름다운 할머니 (심윤경)</p></td>
+			</tr>
+			<tr>
+				<td class="tal">크고 작은 상처와 희망을 가진 사람들이 휴남동 서점이라는 공간을 안식처로 삼아 함께 살아가는 법을 배운다. 배려와 친절, 거리를 지킬 줄 아는 사람들끼리의 우정과 느슨한 연대, 진솔하고 잎이 있는 대화 등 우리가 잃어버린 채 살고 있지만 사는 데 꼭 필요한 것들이 가득한 작품이다.</td>
+				<td class="tal">작가가 인터넷에서 우연히 ‘실패한 사람이 다시 성공하는 이야기를 추천해달라는, 지금 자신에게는 그런 이야기가 너무나 필요하다는 글’을 읽고 쓰기 시작한 소설이다. 50년 가까운 세월 동안 끊임없이 사업을 벌이고 주저앉는 일을 반복해온 남자가 어떻게든 자신의 삶을 일으켜 세우고 변화를 시도하면서 인생을 회복해나가는 인물의 눈물겨운 분투기를 담은 작품이다. </td>
+				<td class="tal">책에는 작가가 아이를 키우면서 깨달은 할머니의 사랑법에 대한 이야기로 가득하다. 육아 분투 속에 새로이 되새기게 된 할머니의 사랑과 중년에 겪게 된 우울과 소설가로서의 위기, 가족과 친구 이야기는 독자들에게 작가와 한층 더 가까워지는 기회를 선사한다. 더 나아가 우리 마음속에 남아있는 할머니의 잔상을 일깨우고 ‘할머니’ 같은 마음으로 자기 자신을 사랑하는 법을 알게 해준다. </td>
+			</tr>			
+		</tbody>
+	 </table>
+</div>
+
+<div class="subCnt">
+	<h3>어린이 후보 도서</h3>
+	<table class="tstyle">
+		<caption>어린이 후보 도서</caption>
+		<tbody>
+			<tr>
+				<td><img src="../front/img/img_book2023_ch1.jpg" alt="책 읽는 고양이 서꽁치"><p class="title mt10">책 읽는 고양이 서꽁치 (이경혜)</p></td>
+				<td><img src="../front/img/img_book2023_ch2.jpg" alt="리보와 앤"><p class="title mt10">리보와 앤 (어윤정)</p></td>
+				<td><img src="../front/img/img_book2023_ch3.jpg" alt="5번 레인"><p class="title mt10">5번 레인 (은소홀)</p></td>
+			</tr>
+			<tr>
+				<td class="tal">엄마 고양이와 다섯 마리 새끼 고양이들의 이야기는 시작부터 끝까지 흥미진진하고 활기차고 재미있다. 엄마를 필두로 여섯 마리 고양이들이 생명이 있는 존재로 살아가기 위해 펼치는 모험 속에는 고양이로서의 본연의 모습뿐만 아니라 아슬아슬하게 인간과 이웃해 사는 모습이 따뜻하면서도 사랑스럽게 담겨있다.</td>
+				<td class="tal">도서관에 확산된 바이러스 때문에 방치된 로봇 리보와 앤을 통해 관계의 단절과 고독, 그리고 연결과 우정을 감동적으로 그려냈으며, 나와 타자에 대한 무한한 애정과 존귀함이 되살아나고 가슴속에서 뭉클하고도 따뜻한 감동이 있다. 코로나 시대를 살아온 사람들이라면 누구나 공감할 수 있는 삶의 한 조각이 담겨 있는 작품이다.</td>
+				<td class="tal">열세 살 수영부 아이들의 고락을 담은 이야기로 아동 문학에서 흔치 않은 스포츠물이라는 점이 눈에 뛰며, 수영이라는 소재로 '몸과 마음의 성장'이라는 주제 의식을 훌륭하게 구현한 작품이다. 자신의 미래를 진지하게 고민하고 스스로 선택한 길을 향해 힘차게 나아가는 아이들의 건강한 모습에서 묵직한 감동을 준다.</td>
+			</tr>			
+		</tbody>
+	 </table>	 
+</div>-->
+
+<div class="subCnt pc_subCnt">
+	<h3>2023년 광명시 올해의 책</h3>
+	<p class="mobile_table">좌우로 스크롤 하시면 표의 전체 내용을 보실 수 있습니다.</p>
+	<div class="table_wp">
+	<table class="tstyle">
+		<caption>2023년 한책 후보 도서(청소년, 성인도서 / 아동도서) 안내표</caption>
+		<colgroup>
+			<col style="width:15%">
+			<col style="width:20%">
+			<col style="width:%">
+			<col style="width:45%">
+		</colgroup>
+		<tbody>
+            <tr>
+                <th scope="row" class="td_bg">일반(청소년) 도서</th>
+                <td><img src="./1_files/2023book_01.jpg" alt="어서오세요, 휴남동 서점입니다"></td>
+                <td class="td_left">· 서  명 : 어서오세요, 휴남동 서점입니다<br>· 저자명 : 황보름<br>· 출판사 : 클레이하우스<br>· 출판년도 : 2022</td>
+				<td class="td_left">크고 작은 상처와 희망을 가진 사람들이 휴남동 서점이라는 공간을 안식처로 삼아 함께 살아가는 법을 배운다. 배려와 친절, 거리를 지킬 줄 아는 사람들끼리의 우정과 느슨한 연대, 진솔하고 잎이 있는 대화 등 우리가 잃어버린 채 살고 있지만 사는 데 꼭 필요한 것들이 가득한 작품이다.</td>
+            </tr>
+
+            <tr>
+                <th scope="row" class="td_bg">어린이 도서</th>
+                <td><img src="./1_files/2023book_02.jpg" alt="리보와 앤"></td>
+                <td class="td_left">· 서  명 : 리보와 앤<br>· 저자명 : 어윤정<br>· 출판사 : 문학동네<br>· 출판년도 : 2023</td>
+				<td class="td_left">도서관에 확산된 바이러스 때문에 방치된 로봇 리보와 앤을 통해 관계의 단절과 고독, 그리고 연결과 우정을 감동적으로 그려냈으며, 나와 타자에 대한 무한한 애정과 존귀함이 되살아나고 가슴속에서 뭉클하고도 따뜻한 감동이 있다. 코로나 시대를 살아온 사람들이라면 누구나 공감할 수 있는 삶의 한 조각이 담겨 있는 작품이다.</td>
+            </tr>
+
+		</tbody>
+	</table>
+	</div>
+</div>
+
+<div class="subCnt m_subCnt">
+	<div class="">
+	<table class="tstyle">
+		<colgroup>
+			<col style="width:50%">
+			<col style="width:50%">
+		</colgroup>
+		<tbody>
+            <tr>
+                <td colspan="2" class="td_bg">일반(청소년) 도서</td>
+            </tr>
+<tr>
+				<td><img src="./1_files/2023book_01.jpg" alt="어서오세요, 휴남동 서점입니다"></td>
+				<td class="td_left">· 서명 : 어서오세요, 휴남동 서점입니다<br>· 저자 : 황보름<br>· 출판사 : 클레이하우스<br>· 출판년도 : 2022</td>
+			</tr>
+			<tr>
+				<td class="td_left" colspan="2">크고 작은 상처와 희망을 가진 사람들이 휴남동 서점이라는 공간을 안식처로 삼아 함께 살아가는 법을 배운다. 배려와 친절, 거리를 지킬 줄 아는 사람들끼리의 우정과 느슨한 연대, 진솔하고 잎이 있는 대화 등 우리가 잃어버린 채 살고 있지만 사는 데 꼭 필요한 것들이 가득한 작품이다.</td>
+			</tr>
+			
+
+            <tr>
+                <td colspan="2" class="td_bg">어린이 도서</td>
+            </tr>
+			<tr>
+				<td><img src="./1_files/2023book_02.jpg" alt="리보와 앤"></td>
+				<td class="td_left">· 서명 : 리보와 앤<br>· 저자 : 어윤정<br>· 출판사 : 문학동네<br>· 출판년도 : 2023</td>
+			</tr>
+			<tr>
+				<td class="td_left" colspan="2">도서관에 확산된 바이러스 때문에 방치된 로봇 리보와 앤을 통해 관계의 단절과 고독, 그리고 연결과 우정을 감동적으로 그려냈으며, 나와 타자에 대한 무한한 애정과 존귀함이 되살아나고 가슴속에서 뭉클하고도 따뜻한 감동이 있다. 코로나 시대를 살아온 사람들이라면 누구나 공감할 수 있는 삶의 한 조각이 담겨 있는 작품이다.</td>
+			</tr>
+			
+		</tbody>
+	</table>
+	</div>
+</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+
+		<!-- footer_section -->
+		<div id="s_foot_section">
+			<div class="sFooter">
+
+				<div class="f_menu">
+					<div class="in">
+						<ul>
+							<li><a href="https://gmlib.gm.go.kr/front/index.php?g_page=etc&amp;m_page=etc07">개인정보처리방침</a></li>
+							<li><a href="https://gmlib.gm.go.kr/front/index.php?g_page=etc&amp;m_page=etc07">영상처리기기운영방침</a></li>
+							<li><a href="https://gmlib.gm.go.kr/front/index.php?g_page=intro&amp;m_page=intro06">도서관오시는길</a></li>
+							<!--<li><a href="./index.php?g_page=etc&m_page=etc06">도서관둘러보기</a></li>-->
+							<li><a href="https://gmlib.gm.go.kr/front/index.php?g_page=etc&amp;m_page=etc07">이용자서비스헌장</a></li>
+							<!--<li><a href="">디지털도서관</a></li>-->
+						</ul>
+					</div>
+				</div>
+
+				<div class="f_info">
+					<div class="in">
+						<p class="f_logo"><img src="./1_files/f_logo.png" alt="광명시도서관 Gwangmyeong Municipal Library"><a href="http://webwatch.or.kr/" target="_blank" title="새창 열림" class="wa_mark"><img src="./1_files/WA_Mark.png" alt="과학기술정보통신부 WA(WEB접근성) 품질인증 마크, 웹와치(WebWatch) 2022.6.16 ~ 2023.6.16"></a></p>
+						<div class="in_wrap">
+							<ul>
+								<li><strong class="lib_name">하안도서관</strong><span class="addr">경기도 광명시 철망산로 46</span><span class="tel">Tel. 02-2680-2871</span><span class="fax">Fax. 02-2680-2877</span></li>
+								<li><strong class="lib_name">광명도서관</strong><span class="addr">경기도 광명시 원광명안로 48</span><span class="tel">Tel.  02-2680-6541</span><span class="fax">Fax. 02-2680-6531</span></li>
+								<li><strong class="lib_name">철산도서관</strong><span class="addr">경기도 광명시 철산로 56</span><span class="tel">Tel. 02-2680-6820</span><span class="fax">Fax. 02-2680-6826</span></li>
+							</ul>
+							<ul>
+								<li><strong class="lib_name">소하도서관</strong><span class="addr">경기도 광명시 소하일로 7</span><span class="tel">Tel. 02-2680-0900</span><span class="fax">Fax. 02-2680-0919</span></li>
+								<li><strong class="lib_name">충현도서관</strong><span class="addr">경기도 광명시 충현로42번길 19</span><span class="tel">Tel. 02-2680-6111</span><span class="fax">Fax. 02-2680-0919</span></li>
+								<li><strong class="lib_name">연서도서관</strong><span class="addr">경기도 광명시 연서일로 10</span><span class="tel">Tel. 02-2680-6630</span><span class="fax">Fax. 02-2680-6640</span></li>
+							</ul>
+						</div>
+						<p class="copyright">Copyright ⓒ 광명시도서관. All rights reserved.</p>
+					</div>
+				</div>
+
+			</div>
+		</div>
+		<!-- //footer_section -->
+
+		<div id="gotop" style="display: block; opacity: 0.375655;"><a href="https://gmlib.gm.go.kr/front/index.php?g_page=event&amp;m_page=event16#hCheon">TOP</a></div>
+	</div>
+
+	<div id="dkleft" class="dkleft" style="z-index: 1; display: none;">
+		<div class="lefttit">
+						<button onclick="location.href=&#39;./index.php?g_page=member&amp;m_page=member01&amp;returnUrl=L2Zyb250L2luZGV4LnBocD9nX3BhZ2U9ZXZlbnQmbV9wYWdlPWV2ZW50MTY=&#39;"><i class="fa fa-unlock-alt"></i>LOGIN</button>
+					</div>
+		<div class="select">
+						<div style="background:#eee;padding-top: 60px;padding-left:15px;"><a href="https://gmlib.gm.go.kr/dls_lu/" class="join"><i class="fa fa-user-o"></i>회원가입</a> <a href="https://gmlib.gm.go.kr/dls_lu/member/index.php?act=joinAct&amp;step=idSearch" class="idpw">아이디/비밀번호 찾기</a></div>
+									<a class="depth1">도서관안내<i class="rightico fa fa-angle-down"></i></a>
+						<ul class="depth2">
+								<li><a href="https://gmlib.gm.go.kr/front/index.php?g_page=intro&amp;m_page=intro01_03">도서관발자취</a>
+					<!-- depth 3 -->
+									</li>
+					<!-- depth 3 -->
+								<li><a href="https://gmlib.gm.go.kr/front/index.php?g_page=intro&amp;m_page=intro02_01_03">도서관 현황</a>
+					<!-- depth 3 -->
+										<ul class="depth3">
+												<li><a href="https://gmlib.gm.go.kr/front/index.php?g_page=intro&amp;m_page=intro02_01_03">조직 안내 및 전화번호</a></li>
+												<li><a href="https://gmlib.gm.go.kr/front/index.php?g_page=intro&amp;m_page=intro02_04">장서현황</a></li>
+												<li><a href="https://gmlib.gm.go.kr/front/index.php?g_page=intro&amp;m_page=intro02_03_03">시설현황</a></li>
+											</ul>
+									</li>
+					<!-- depth 3 -->
+								<li><a href="https://gmlib.gm.go.kr/front/index.php?g_page=intro&amp;m_page=intro09_01_03">이용안내</a>
+					<!-- depth 3 -->
+										<ul class="depth3">
+												<li><a href="https://gmlib.gm.go.kr/front/index.php?g_page=intro&amp;m_page=intro09_01_03">자료대출 및 반납</a></li>
+												<li><a href="https://gmlib.gm.go.kr/front/index.php?g_page=intro&amp;m_page=intro09_02_03">이용시간 및 휴관일</a></li>
+												<li><a href="https://gmlib.gm.go.kr/front/index.php?g_page=intro&amp;m_page=intro09_04">회원가입</a></li>
+											</ul>
+									</li>
+					<!-- depth 3 -->
+								<li><a href="https://gmlib.gm.go.kr/front/index.php?g_page=intro&amp;m_page=intro04_01_03">실별안내</a>
+					<!-- depth 3 -->
+										<ul class="depth3">
+												<li><a href="https://gmlib.gm.go.kr/front/index.php?g_page=intro&amp;m_page=intro04_01_03">자료실안내</a></li>
+												<li><a href="https://gmlib.gm.go.kr/front/index.php?g_page=intro&amp;m_page=intro04_02_03">열람실안내</a></li>
+											</ul>
+									</li>
+					<!-- depth 3 -->
+								<li><a href="https://gmlib.gm.go.kr/front/index.php?g_page=intro&amp;m_page=intro05_03">편의시설안내</a>
+					<!-- depth 3 -->
+									</li>
+					<!-- depth 3 -->
+								<li><a href="https://gmlib.gm.go.kr/front/index.php?g_page=intro&amp;m_page=intro06">찾아오시는길</a>
+					<!-- depth 3 -->
+										<ul class="depth3">
+												<li><a href="https://gmlib.gm.go.kr/front/index.php?g_page=intro&amp;m_page=intro06">공공도서관</a></li>
+												<li><a href="https://gmlib.gm.go.kr/front/index.php?g_page=intro&amp;m_page=intro06_02">작은도서관</a></li>
+											</ul>
+									</li>
+					<!-- depth 3 -->
+								<li><a href="https://gmlib.gm.go.kr/front/index.php?g_page=intro&amp;m_page=intro08">작은도서관</a>
+					<!-- depth 3 -->
+										<ul class="depth3">
+												<li><a href="https://gmlib.gm.go.kr/front/index.php?g_page=intro&amp;m_page=intro08">공립 작은도서관</a></li>
+												<li><a href="https://gmlib.gm.go.kr/front/index.php?g_page=intro&amp;m_page=intro08_02">사립 작은도서관</a></li>
+											</ul>
+									</li>
+					<!-- depth 3 -->
+							</ul>
+									<a class="depth1">자료정보·검색<i class="rightico fa fa-angle-down"></i></a>
+						<ul class="depth2">
+								<li><a href="https://gmlib.gm.go.kr/front/index.php?g_page=search&amp;m_page=search01">자료검색</a>
+					<!-- depth 3 -->
+										<ul class="depth3">
+											</ul>
+									</li>
+					<!-- depth 3 -->
+								<li><a href="https://gmlib.gm.go.kr/front/index.php?g_page=search&amp;m_page=search02">새로들어온책</a>
+					<!-- depth 3 -->
+										<ul class="depth3">
+											</ul>
+									</li>
+					<!-- depth 3 -->
+								<li><a href="https://gmlib.gm.go.kr/front/index.php?g_page=search&amp;m_page=search03">스마트도서관 검색</a>
+					<!-- depth 3 -->
+										<ul class="depth3">
+											</ul>
+									</li>
+					<!-- depth 3 -->
+								<li><a href="https://gmlib.gm.go.kr/front/index.php?g_page=search&amp;m_page=search08">전자도서관</a>
+					<!-- depth 3 -->
+										<ul class="depth3">
+												<li><a href="https://gmlib.gm.go.kr/front/index.php?g_page=search&amp;m_page=search08">전자책</a></li>
+												<li><a href="https://gmlib.gm.go.kr/front/index.php?g_page=search&amp;m_page=search08_04">오디오북</a></li>
+												<li><a href="https://gmlib.gm.go.kr/front/index.php?g_page=search&amp;m_page=search08_12">전자잡지</a></li>
+												<li><a href="http://www.siyoillib.com/gw.aspx?orgid=9&amp;uid=" target="_blank" title="새창">시요일</a></li>
+												<li><a href="https://gmlib.gm.go.kr/front/index.php?g_page=search&amp;m_page=search08_09">학회지 DB</a></li>
+												<li><a href="https://gmlib.gm.go.kr/front/index.php?g_page=search&amp;m_page=search08_10">북세미나</a></li>
+												<li><a href="https://gmlib.gm.go.kr/front/index.php?g_page=search&amp;m_page=search08_11">도서요약</a></li>
+											</ul>
+									</li>
+					<!-- depth 3 -->
+								<li><a href="https://gmlib.gm.go.kr/front/index.php?g_page=search&amp;m_page=search06">광명시도서관 대출베스트</a>
+					<!-- depth 3 -->
+										<ul class="depth3">
+											</ul>
+									</li>
+					<!-- depth 3 -->
+								<li><a href="https://gmlib.gm.go.kr/front/index.php?g_page=search&amp;m_page=search07">전국도서관 대출베스트</a>
+					<!-- depth 3 -->
+										<ul class="depth3">
+											</ul>
+									</li>
+					<!-- depth 3 -->
+								<li><a href="https://gmlib.gm.go.kr/front/index.php?g_page=search&amp;m_page=search09">정기간행물 목록</a>
+					<!-- depth 3 -->
+									</li>
+					<!-- depth 3 -->
+							</ul>
+									<a class="depth1">문화행사<i class="rightico fa fa-angle-down"></i></a>
+						<ul class="depth2">
+								<li><a href="https://gmlib.gm.go.kr/front/index.php?g_page=event&amp;m_page=event01">이달의 도서관</a>
+					<!-- depth 3 -->
+										<ul class="depth3">
+											</ul>
+									</li>
+					<!-- depth 3 -->
+								<li><a href="https://gmlib.gm.go.kr/front/index.php?g_page=event&amp;m_page=event02">문화행사게시판</a>
+					<!-- depth 3 -->
+										<ul class="depth3">
+											</ul>
+									</li>
+					<!-- depth 3 -->
+								<li><a href="https://gmlib.gm.go.kr/front/index.php?g_page=event&amp;m_page=event14">문화행사 신청</a>
+					<!-- depth 3 -->
+										<ul class="depth3">
+											</ul>
+									</li>
+					<!-- depth 3 -->
+								<li><a href="https://gmlib.gm.go.kr/front/index.php?g_page=event&amp;m_page=event15">책축제</a>
+					<!-- depth 3 -->
+									</li>
+					<!-- depth 3 -->
+								<li><a href="https://gmlib.gm.go.kr/front/index.php?g_page=event&amp;m_page=event16">광명시민 「책 한 권」 함께 읽기</a>
+					<!-- depth 3 -->
+									</li>
+					<!-- depth 3 -->
+							</ul>
+									<a class="depth1">이용자서비스<i class="rightico fa fa-angle-down"></i></a>
+						<ul class="depth2">
+								<li><a href="https://gmlib.gm.go.kr/front/index.php?g_page=service&amp;m_page=service01">상호대차서비스</a>
+					<!-- depth 3 -->
+										<ul class="depth3">
+											</ul>
+									</li>
+					<!-- depth 3 -->
+								<li><a href="https://gmlib.gm.go.kr/front/index.php?g_page=service&amp;m_page=service10">책이음서비스</a>
+					<!-- depth 3 -->
+										<ul class="depth3">
+											</ul>
+									</li>
+					<!-- depth 3 -->
+								<li><a href="https://gmlib.gm.go.kr/front/index.php?g_page=service&amp;m_page=service13">대출·반납</a>
+					<!-- depth 3 -->
+										<ul class="depth3">
+												<li><a href="https://gmlib.gm.go.kr/front/index.php?g_page=service&amp;m_page=service13">관외대출도서예약</a></li>
+												<li><a href="https://gmlib.gm.go.kr/front/index.php?g_page=service&amp;m_page=service13_02">무인대출예약</a></li>
+											</ul>
+									</li>
+					<!-- depth 3 -->
+								<li><a href="https://gmlib.gm.go.kr/front/index.php?g_page=service&amp;m_page=service02">희망도서신청</a>
+					<!-- depth 3 -->
+									</li>
+					<!-- depth 3 -->
+								<li><a href="https://gmlib.gm.go.kr/front/index.php?g_page=test&amp;inc=baro_login" target="_blank" title="새창">지역서점바로대출</a>
+					<!-- depth 3 -->
+										<ul class="depth3">
+											</ul>
+									</li>
+					<!-- depth 3 -->
+								<li><a href="https://gmlib.gm.go.kr/front/index.php?g_page=service&amp;m_page=service14">대출편의서비스</a>
+					<!-- depth 3 -->
+										<ul class="depth3">
+												<li><a href="https://gmlib.gm.go.kr/front/index.php?g_page=service&amp;m_page=service14">책바다서비스</a></li>
+												<li><a href="https://gmlib.gm.go.kr/front/index.php?g_page=service&amp;m_page=service14_02">내생애첫도서관서비스</a></li>
+												<li><a href="https://gmlib.gm.go.kr/front/index.php?g_page=service&amp;m_page=service14_03">두루두루서비스</a></li>
+												<li><a href="https://gmlib.gm.go.kr/front/index.php?g_page=service&amp;m_page=service14_05">책나래서비스</a></li>
+											</ul>
+									</li>
+					<!-- depth 3 -->
+								<li><a href="https://gmlib.gm.go.kr/front/index.php?g_page=service&amp;m_page=service15">북스타트</a>
+					<!-- depth 3 -->
+										<ul class="depth3">
+											</ul>
+									</li>
+					<!-- depth 3 -->
+							</ul>
+									<a class="depth1">열린공간<i class="rightico fa fa-angle-down"></i></a>
+						<ul class="depth2">
+								<li><a href="https://gmlib.gm.go.kr/front/index.php?g_page=open&amp;m_page=open01">공지사항</a>
+					<!-- depth 3 -->
+										<ul class="depth3">
+											</ul>
+									</li>
+					<!-- depth 3 -->
+								<li><a href="https://gmlib.gm.go.kr/front/index.php?g_page=open&amp;m_page=open02">열린소리함</a>
+					<!-- depth 3 -->
+										<ul class="depth3">
+											</ul>
+									</li>
+					<!-- depth 3 -->
+								<li><a href="https://gmlib.gm.go.kr/front/index.php?g_page=open&amp;m_page=open03">참여마당</a>
+					<!-- depth 3 -->
+										<ul class="depth3">
+												<li><a href="https://gmlib.gm.go.kr/front/index.php?g_page=open&amp;m_page=open03">견학안내</a></li>
+												<li><a href="https://gmlib.gm.go.kr/front/index.php?g_page=open&amp;m_page=open03_02">자원봉사안내</a></li>
+												<li><a href="https://gmlib.gm.go.kr/front/index.php?g_page=open&amp;m_page=open03_03_03">시설이용신청</a></li>
+												<li><a href="https://gmlib.gm.go.kr/front/index.php?g_page=open&amp;m_page=open03_04">도서기증</a></li>
+											</ul>
+									</li>
+					<!-- depth 3 -->
+								<li><a href="https://gmlib.gm.go.kr/front/index.php?g_page=open&amp;m_page=open06_03">동아리 안내</a>
+					<!-- depth 3 -->
+									</li>
+					<!-- depth 3 -->
+								<li><a href="https://gmlib.gm.go.kr/front/index.php?g_page=open&amp;m_page=open04">설문조사</a>
+					<!-- depth 3 -->
+										<ul class="depth3">
+											</ul>
+									</li>
+					<!-- depth 3 -->
+							</ul>
+									<a class="depth1">나의 도서관<i class="rightico fa fa-angle-down"></i></a>
+						<ul class="depth2">
+								<li><a href="https://gmlib.gm.go.kr/front/index.php?g_page=mypage&amp;m_page=mypage01">내서재</a>
+					<!-- depth 3 -->
+										<ul class="depth3">
+											</ul>
+									</li>
+					<!-- depth 3 -->
+								<li><a href="https://gmlib.gm.go.kr/front/index.php?g_page=mypage&amp;m_page=mypage02">문화행사 신청내역</a>
+					<!-- depth 3 -->
+										<ul class="depth3">
+											</ul>
+									</li>
+					<!-- depth 3 -->
+								<li><a href="https://gmlib.gm.go.kr/front/index.php?g_page=mypage&amp;m_page=mypage03">희망도서 신청내역</a>
+					<!-- depth 3 -->
+										<ul class="depth3">
+											</ul>
+									</li>
+					<!-- depth 3 -->
+								<li><a href="https://gmlib.gm.go.kr/front/index.php?g_page=mypage&amp;m_page=mypage05&amp;appPart=culture">책축제 신청내역</a>
+					<!-- depth 3 -->
+										<ul class="depth3">
+											</ul>
+									</li>
+					<!-- depth 3 -->
+								<li><a href="https://gmlib.gm.go.kr/dls_lu/member/index.php?act=joinAct&amp;step=userJoin">기본정보</a>
+					<!-- depth 3 -->
+										<ul class="depth3">
+											</ul>
+									</li>
+					<!-- depth 3 -->
+							</ul>
+								</div>
+	</div>
+
+
+
+
+
+
+<script type="text/javascript" src="./1_files/wcslog.js.다운로드"></script>
+<script type="text/javascript">
+//http
+if(!wcs_add) var wcs_add = {};
+wcs_add["wa"] = "49d38b722f0184";
+if(window.wcs) {
+wcs_do();
+}
+</script>
+
+<script type="text/javascript" src="./1_files/wcslog.js.다운로드"></script>
+<script type="text/javascript">
+//https
+if(!wcs_add) var wcs_add = {};
+wcs_add["wa"] = "7eba74e06c9e54";
+if(window.wcs) {
+wcs_do();
+}
+</script>
+
+<!--<script>
+jQuery(function($){
+	// List Tab Navigation
+	var $tab_list = $('.tab.list');
+	$tab_list.removeClass('jx').find('ul ul').hide();
+	$tab_list.find('li li.active').parents('li').addClass('active');
+	$tab_list.find('li.active>ul').show();
+	$tab_list.each(function(){
+		var $this = $(this);
+		$this.height($this.find('li.active>ul').height()+210);
+	});
+	function listTabMenuToggle(event){
+		var $this = $(this);
+		$this.next('ul').show().parent('li').addClass('active').siblings('li').removeClass('active').find('>ul').hide();
+		$this.closest('.tab.list').height($this.next('ul').height()+210);
+		if($this.attr('href') === '#'){
+			return false;
+		}
+	}
+	$tab_list.find('>ul>li>a').click(listTabMenuToggle).focus(listTabMenuToggle);
+});
+</script>-->
+
+<script>
+$(document).ready(function(){
+
+	$('ul.tabs li').click(function(){
+		var tab_id = $(this).attr('data-tab');
+
+		$('ul.tabs li').removeClass('current');
+		$('.tab-content').removeClass('current');
+
+		$(this).addClass('current');
+		$("#"+tab_id).addClass('current');
+	})
+
+})
+</script>
+
+<script>
+	$(function() {
+		$('ul.subtab li').click(function() {
+			var activeTab = $(this).attr('data-tab');
+			$('ul.subtab li').removeClass('current');
+			$('.tabcon').removeClass('current');
+			$(this).addClass('current');
+			$('#' + activeTab).addClass('current');
+		})
+	});
+</script>
+
+<script>
+$(function() {
+	$('#mBook h2 a').on('click', function() {
+		$('#mBook > div').removeClass('tab_on');
+		$(this).parents('div').addClass('tab_on');
+		return false;
+	});
+
+
+	setTimeout(function() {
+		$('.lib_guide').show();
+		console.log('Loading');
+	}, 500);
+
+
+});
+</script>
+
+</body></html>

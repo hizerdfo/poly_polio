@@ -1,0 +1,856 @@
+
+function winOpen(src, width, height) {
+	try{
+		var win = window.open(src, 'WinPop', "menubar=0, statusbar=0, width="+width+", height="+height+", resize=true, scrollbar=true");
+		win.focus();
+	} catch(e) {
+		alert('팝업을 띄우지 못했습니다. 관리자에게 문의 해주세요');
+	}
+}
+
+function wjMobile(){
+	/*스마트폰 접속시*/
+	var userAgent = navigator.userAgent;
+	var pattern = /(SCH\-|SPH\-|SGH\-|LG\-|CANU|IM\-|EV\-|iPhone|Nokia|BlackBerry|Android)/gi;
+	var isMobile = pattern.test(userAgent);
+	return isMobile
+}
+
+function resizeIFrame( height ) {
+	var iframe = document.getElementById('searchFrame');
+	iframe.setAttribute( 'width', '100%' );
+	iframe.setAttribute( 'height', height ); 
+}
+function wdSetFontSize(a) {
+	var defaultFontSize = 1;//em
+	var minFontSize = 1;//em
+	var maxFontSize = 2;//em
+	//if(document.getElementById("main_body")) var obj = document.getElementById("main_body");
+	//else var obj = document.getElementById("sub_body");
+	var obj = document.getElementById("contain");
+	var objFontSize = obj.style.fontSize;
+	if (!objFontSize) { objFontSize = parseFloat(defaultFontSize)+"em"; }
+	var checkFontSize = (Math.round(12*parseFloat(objFontSize))+(a*2))/12;
+	if (checkFontSize > maxFontSize) { checkFontSize = maxFontSize; obj.style.fontSize = checkFontSize+"em"; alert("더이상 늘릴 수 없습니다."); }
+	else if (checkFontSize < minFontSize) { checkFontSize = minFontSize; obj.style.fontSize = checkFontSize+"em"; alert("더이상 줄일 수 없습니다."); }
+	else { obj.style.fontSize = checkFontSize+"em"; }
+//	alert(checkFontSize);
+}
+function wdSetRESize() {
+	//if(document.getElementById("main_body")) var obj = document.getElementById("main_body");
+	//else var obj = document.getElementById("sub_body");
+	var obj = document.getElementById("contain");  
+	obj.style.fontSize = "1em";
+}
+
+/* 모바일 왼쪽메뉴 */
+var dkitsnap = {
+	mname : null
+	,lname : null
+	,maxw : null
+	,maxh : null
+	,speed : 200
+	,status : false
+	,loding : false
+	,start : function(lname,mname){
+		this.lname = lname;
+		this.mname = mname;
+		
+		this.maxw = $("#"+this.lname).width();
+
+		this.css3 = Modernizr.csstransforms3d;
+		$("body").css('position', "relative");
+		
+		$("#"+this.lname).css('z-index', 1);
+		$("#"+this.lname).hide();
+		
+		//$("#"+this.mname).css('min-height', $("#"+this.lname).height());
+		$("#"+this.mname).css('z-index', 100);
+		$("#"+this.mname).css('background', "#fff");
+		$("#"+this.mname).css('position', "relative");
+		
+		$('.mocate').click(function() {
+			dkitsnap.action();
+		});
+		
+		/*
+		$(".selmenu").click(function(){
+			var l = $("#wrap").css("top");
+			if(l=="-50px") {
+				$("#wrap").animate({top: '0px'}, 300);;				
+			}else{
+				$("#wrap").animate({top: '-50px'}, 300);
+			}
+		});	
+		*/	
+		
+		// 슬라이딩 됬을때, 컨텐츠 클릭하면 원복
+		$('#closeleft').click(function(e) {
+			if(dkitsnap.status == true){
+				dkitsnap.action();
+				e.preventDefault();
+				e.stopPropagation();
+
+				return false;
+			}
+		});
+		$('#'+this.mname).click(function(e) {
+			if(dkitsnap.status == true){
+				dkitsnap.action();
+				e.preventDefault();
+				e.stopPropagation();
+
+				return false;
+			}
+		});
+	}
+	,action : function(){
+		move = "";
+		if(this.loding == true) return;
+		
+		this.loding = true;
+
+		if(this.status == false){
+			move = "+="+this.maxw;
+			this.status = true;
+			$("#"+this.lname).show();				
+			
+			lh = "";
+			if($(window).height() > $("#"+this.lname).height()){
+				lh = $(window).height();
+			}else{
+				lh = $("#"+this.lname).height();
+			}
+			
+			$("html").css('overflow', "hidden");
+			$("body").css('overflow', "hidden");
+			$('#popupbar').css('left','260px');
+			//$("#"+this.mname).css('overflow', "hidden");
+			$("#"+this.mname).css('height', lh);
+			//$("#"+this.mname).css('padding-bottom', "2px");
+			$("body").css('height', lh+2);
+			
+			
+		}else{
+			move = "-="+this.maxw;
+			dkitsnap.status = false;
+			$("#"+this.mname).css('height', "");
+			$("#"+this.mname).css('overflow', "");
+
+			$("html").css('overflow', "");
+			$("body").css('overflow', "");
+			$('#popupbar').css('left','0');
+			//$("#"+this.mname).css('padding-bottom', "0px");
+		}
+		
+		if(navigator.userAgent.indexOf("MSIE") == -1){
+			$("#"+this.mname).animate_new({left: move+"px", leaveTransforms:false }, this.speed, function() {
+				if(dkitsnap.status == false){
+					$("#"+dkitsnap.lname).hide();
+					$("#blind").remove();
+					$("#closeleft").remove();
+				}else{
+					$("<div id='blind'></div>").appendTo("#"+dkitsnap.mname);	
+					$("<a id='closeleft'></a>").appendTo("#"+dkitsnap.mname);
+				}
+				dkitsnap.loding	= false;
+			});
+		}else{
+			$("#"+this.mname).animate({left: move+"px", leaveTransforms:false }, this.speed, function() {
+				if(dkitsnap.status == false){
+					$("#"+dkitsnap.lname).hide();
+					$("#blind").remove();	
+					$("#closeleft").remove();			
+				}else{
+					$("<div id='blind'></div>").appendTo("#"+dkitsnap.mname);	
+					$("<a id='closeleft'></a>").appendTo("#"+dkitsnap.mname);				
+				}
+				dkitsnap.loding	= false;
+			});
+		}
+		// 기타 진행 추가
+		//this.getetc();
+	}
+	/*
+	,getetc :  function(){
+		try{
+			if(this.status == true){ $("#banner").hide(); }else{ $("#banner").show(); }
+		}catch(e){}
+		
+	}
+	*/
+}
+
+// JQUERY 캘린더 설정
+$(document).ready(function() {
+	/* 달력 input box 에는 모두 readonly 속성 부여 */
+	//$(".datePicker").attr("readonly","readonly");
+	var v = new Date();
+	var y = parseInt(v.getFullYear());
+	$(".datePicker1").datepicker({
+	
+		dateFormat: 'yy-mm-dd',
+		prevText: '이전 달',
+		nextText: '다음 달',
+		monthNames: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+		monthNamesShort: ['1월','2월','3월','4월','5월','6월','7월','8월','9월','10월','11월','12월'],
+		dayNames: ['일','월','화','수','목','금','토'],
+		dayNamesShort: ['일','월','화','수','목','금','토'],
+		dayNamesMin: ['일','월','화','수','목','금','토'],
+		yearRange:"1900:" + (y + 1),
+		changeYear:true,
+		changeMonth:true,
+		showAnim: "slide" //애니메이션을 적용한다.		
+	});
+ });
+;
+
+/*pc메뉴*/
+$(function() {
+		$('.depth1 > li > a').on('mouseenter focus', function(){			
+			$('#gnb .depth2').css('display','block');
+			$('#gnb').addClass('sel');
+			$('#header').addClass('sel');
+			$('#menu a').addClass('sel');
+			$('#allbg').stop().fadeIn(0);
+			$('#gnb .nav_bg').stop().fadeIn(0);
+		});
+		$('#gnb').on('mouseleave', function(){			
+			$('#gnb .depth2').css('display','none');
+			$('#header').removeClass('sel');
+			$('#menu a').removeClass('sel');
+			$('#gnb').removeClass('sel');
+			$('#allbg').fadeOut();
+			$('#gnb .nav_bg').css('display', 'none');
+		});
+		$('.depth1 > li:last-child li:last-child a ').on('focusout', function() {			
+			$('#gnb .depth2').css('display','none');
+			$('#header').removeClass('sel');
+			$('#menu a').removeClass('sel');
+			$('#gnb').removeClass('sel');
+			$('#allbg').fadeOut();
+			$('#gnb .nav_bg').css('display', 'none');
+		});
+		$(".mpen").click(function(){
+			$("#lnb").css("display","block");
+		});
+		$(".mlose").click(function(){
+			$("#lnb").css("display","none");
+		});
+	});
+	/*$(window).scroll(function(){
+		if ($(this).scrollTop() > 30) {
+			$('#header').addClass("fix_menu");
+		} else {
+		   $('#header').removeClass("fix_menu");
+		};
+	});*/
+//]]>
+
+$(function() {
+	$('#header .etc_btn .etc_select > a').on('click', function() {
+		$(this).next('ul').slideToggle(400);
+		return false;
+	});
+
+	$('#header .etc_wp .search').on('click', function() {
+		$('body').css('overflow', 'hidden');
+		$('#allbg').css('z-index', 30001).fadeIn();
+		$('#topSearchWp').stop().animate({top: '0px'}, 300);
+		$('#topSearchWp').show();
+	});
+	$('#topSearchWp .close').click(function() {
+		$('body').css('overflow', 'auto');
+		$('#allbg').fadeOut();
+		$('#topSearchWp').stop().animate({top: '-200px'}, 300);
+		$('#topSearchWp').hide();
+		return false;
+	});
+	$('#allbg').click(function() {
+		$('body').css('overflow', 'unset');
+		$('#allbg').fadeOut();
+		$('#topSearchWp').stop().animate({top: '-200px'}, 300);
+		$('#topSearchWp').hide();
+	});
+});
+
+$(function() {
+	$('#mScroll button').click(function () {
+		var nextSec = $('#section01').offset();
+		$('body,html').animate({
+			scrollTop: nextSec.top -110
+		}, 800);
+		return false;
+	});
+});
+
+$(function() {
+	$('#visual .slider').slick({
+		autoplay: false,
+		//autoplaySpeed: 6000,
+		dots: false,
+		arrows: true,
+		fade: true,
+		//appendDots: '.visual_controls'
+	});
+	/*$('#visual .visual_controls .controls .stop').on('click', function() {
+		$('#visual .visual_img .slider').slick('slickPause');
+		$('#visual .visual_controls .controls .stop').css('display', 'none');
+		$('#visual .visual_controls .controls .play').css('display', 'inline-block');
+		return false;
+	});
+	$('#visual .visual_controls .controls .play').on('click', function() {
+		$('#visual .visual_img .slider').slick('slickPlay');
+		$('#visual .visual_controls .controls .play').css('display', 'none');
+		$('#visual .visual_controls .controls .stop').css('display', 'inline-block');
+		return false;
+	});*/
+});
+
+$(function() {
+	/*$('#section01 .culture_slide').slick({
+		autoplay: true,
+		autoplaySpeed: 30000,
+		fade: true,
+		arrows: false,
+		infinite: true
+	});
+	$('#section01 .title_tab .title_tab_controls .stop').on('click', function() {
+		$('#section01 .culture_slide').slick('slickPause');
+	});
+	$('#section01 .title_tab .title_tab_controls .play').on('click', function() {
+		$('#section01 .culture_slide').slick('slickPlay');
+	});
+	$('#section01 .culture_slide').on('afterChange', function(event, slick, currentSlide, nextSlide){
+		var thisFld = $('#section01 .culture_slide .slick-current').index();
+		$('#section01 .title_tab li').removeClass('sel')
+		$('#section01 .title_tab li:eq(' + thisFld + ')').addClass('sel')
+	});*/
+	/*$('#section01 .title_tab_controls .stop').click(function() {
+		$('#section01 .cycle-slideshow').cycle('pause');
+		$('#section01 .title_tab_controls button').removeClass('active');
+		$(this).addClass('active');
+	});
+	$('#section01 .title_tab_controls .play').click(function() {
+		$('#section01 .cycle-slideshow').cycle('resume');
+		$('#section01 .title_tab_controls button').removeClass('active');
+		$(this).addClass('active');
+	});*/
+	$('#section01 .title_tab li a').click(function() {
+		//$('#section01 .cycle-slideshow').cycle('pause');
+		$('#section01 .title_tab li').removeClass('sel');
+		$('#section01 .title_tab li a').removeAttr('title');
+		$(this).parents('li').addClass('sel');
+		$(this).attr('title', '선택됨');
+
+		var titleIdx = $(this).parents('li').index() + 1;
+		//alert(titleIdx);
+		$('#section01 .culture_tab').removeClass('sel');
+		$('#section01 .culture_slide .tab0' + titleIdx + '').addClass('sel');
+		return false;
+	});
+	/*$('#section01 .notice_wp .slider').on('init', function(event, slick){
+		$('#section01 .notice_wp .slider').slick('slickGoTo', index);
+	});*/
+	$('#section01 .notice_wp .slider').slick({
+		slidesToShow: 3,
+		appendArrows: '.notice_arrows',
+		//centerMode: true,
+		infinite: false,
+		dots: true,
+		autoplay: false,
+		autoplaySpeed: 2000,
+		responsive: [
+			{
+				breakpoint: 1640,
+				settings: {
+					centerMode: false
+				}
+			},
+			{
+				breakpoint: 1380,
+				settings: {
+					slidesToShow: 2,
+					centerMode: false
+				}
+			},
+			{
+				breakpoint: 840,
+				settings: {
+					slidesToShow: 1,
+					centerMode: false
+				}
+			}
+		],
+		appendDots: '.notice_dots',
+		customPaging: function (slider, i) {
+			//console.log(slider);
+			return  '<strong>' + (i + 1) + '</strong> / ' + slider.slideCount;
+		}
+	});
+	
+	var noticefiltered = false;
+    $('.culture_slide .tab01 .lib_tab a').on('click',function(){
+        //$('.culture_slide .tab01 .lib_tab a').removeClass('sel');
+		$('.culture_slide .tab01 .lib_tab a').removeAttr('title');
+        var nFilter = $(this).data('attribute');
+        if(nFilter=='notice_TOL'){
+            $('.notice_wp .slider').slick('slickUnfilter');
+			$('#section01 .notice_wp .slider').slick('slickGoTo', 0);
+        }else{
+            $('.notice_wp .slider').slick('slickUnfilter').slick('slickFilter','.'+nFilter);
+			$('#section01 .notice_wp .slider').slick('slickGoTo', 0);
+        }
+        $(this).attr('title', '선택됨');
+        noticefiltered = true;
+    });
+	
+	$('#section01 .notice_wp .controls .stop').on('click', function() {
+		$('#section01 .tab01 .slider').slick('slickPause');
+	});
+	$('#section01 .notice_wp .controls .play').on('click', function() {
+		$('#section01 .tab01 .slider').slick('slickPlay');
+	});
+
+	$('#section01 .culture .slider').slick({
+		slidesToShow: 3,
+		appendArrows: '.culture_arrows',
+		//centerMode: true,
+		infinite: false,
+		dots: true,
+		autoplay: false,
+		autoplaySpeed: 2000,
+		responsive: [
+			{
+				breakpoint: 1640,
+				settings: {
+					centerMode: false
+				}
+			},
+			{
+				breakpoint: 1380,
+				settings: {
+					slidesToShow: 2,
+					centerMode: false
+				}
+			},
+			{
+				breakpoint: 840,
+				settings: {
+					slidesToShow: 1,
+					centerMode: false
+				}
+			}
+		],
+		appendDots: '.culture_dots',
+		customPaging: function (slider, i) {
+			//console.log(slider);
+			return  '<strong>' + (i + 1) + '</strong> / ' + slider.slideCount;
+		}
+	});
+
+	var culturefiltered = false;
+    $('.culture_slide .tab02 .lib_tab a').on('click',function(){
+        //$('.culture_slide .tab02 .lib_tab a').removeClass('sel');
+		$('.culture_slide .tab02 .lib_tab a').removeAttr('title');
+        var cFilter = $(this).data('attribute');
+        if(cFilter=='lecture_TOL'){
+            $('.culture .slider').slick('slickUnfilter');
+			$('#section01 .culture .slider').slick('slickGoTo', 0);
+        }else{
+            $('.culture .slider').slick('slickUnfilter').slick('slickFilter','.'+cFilter);
+			$('#section01 .culture .slider').slick('slickGoTo', 0);
+        }
+        //$(this).addClass('sel');
+		$(this).attr('title', '선택됨');
+        culturefiltered = true;
+    });
+	
+	$('#section01 .culture .controls .stop').on('click', function() {
+		$('#section01 .tab02 .slider').slick('slickPause');
+	});
+	$('#section01 .culture .controls .play').on('click', function() {
+		$('#section01 .tab02 .slider').slick('slickPlay');
+	});
+});
+$(function() {
+	$('#section02 .in .slider').slick({
+		slidesToShow: 3,
+		arrows: true,
+		responsive: [
+			{
+				breakpoint: 1400,
+				settings: {
+					slidesToShow: 2
+				}
+			},
+			{
+				breakpoint: 1240,
+				settings: {
+					slidesToShow: 3
+				}
+			},
+			{
+				breakpoint: 640,
+				settings: {
+					slidesToShow: 2
+				}
+			},			,
+			{
+				breakpoint: 420,
+				settings: {
+					slidesToShow: 1
+				}
+			}
+		]
+	});
+
+	$('#section02 .best .slider').slick({
+		slidesToShow: 3,
+		arrows: true,
+		responsive: [
+			{
+				breakpoint: 1400,
+				settings: {
+					slidesToShow: 2
+				}
+			},
+			{
+				breakpoint: 1240,
+				settings: {
+					slidesToShow: 3
+				}
+			},
+			{
+				breakpoint: 640,
+				settings: {
+					slidesToShow: 2
+				}
+			},
+			{
+				breakpoint: 420,
+				settings: {
+					slidesToShow: 1
+				}
+			}
+		]
+	});
+});
+$(function() {
+	$('#section03 .lib_intro_wp .slider').slick({
+		arrows: true,
+		dots: true,
+		fade: true,
+		customPaging: function(slick,index) {
+			var slideLib = slick.$slides.eq(index).attr('data-name');
+			return '<button>' + slideLib + '</button>';
+		},
+		appendDots: '#section03 .lib_tab'
+	});
+
+	$('#section03 .lib_tab .slick-active').children('button').attr('title', '선택됨');
+	$('#section03 .lib_intro_wp .slider').on('afterChange', function() {
+		$('#section03 .lib_tab li').find('button').removeAttr('title');
+		$('#section03 .lib_tab .slick-active').find('button').attr('title', '선택됨');
+	});
+});
+
+/*$(function() {
+	$('#section03 .m_intro .lib_tab > ul > li > a').on('click', function() {
+		var introIdx = $(this).parents('li').index();
+		$(this).parents('li').addClass('sel');
+		$('#section03 .m_intro .lib_tab > ul > li').not($(this).parents('li')).removeClass('sel');
+		$('#section03 .m_intro .lib_intro_wp > ul > li').removeClass('sel');
+		$('#section03 .m_intro .lib_intro_wp > ul > li:eq(' + introIdx + ')').addClass('sel');
+		return false;
+	});
+});*/
+
+$(function(){
+	$('.vepth .btn_toggle').click(function() {
+		if(!$(this).is('.sel')){
+			$('.vepth > div').slideUp();
+			$('.vepth .btn_toggle').removeClass('sel');
+			$(this).next().slideDown();
+			$(this).addClass('sel');
+		}
+		else{
+			$(this).next().slideUp();
+			$(this).removeClass('sel');
+		}
+	});
+	$('.vepth a').bind('click', function(){
+		$(".vepth > div").slideUp();
+		$(".page_path .btn_toggle").removeClass('sel')
+	});
+});
+
+$(function() {
+	$('#introPrivacy ul li .mobile button').on('click', function() {
+		$('#introPrivacy .privacy_btn').slideUp(200);
+		$(this).parents('h3').next('.privacy_btn').stop().slideToggle(200);
+	});
+});
+
+/**/
+//<![CDATA[
+/*
+* jQuery Basic Table
+* Author: Jerry Low
+*/
+
+(function($) {
+  $.fn.basictable = function(options) {
+
+    var setup = function(table, data) {
+      var headings = [];
+
+      if (data.tableWrap) {
+        table.wrap('<div class="bt-wrapper"></div>');
+      }
+
+      var format = '';
+
+      if (table.find('thead tr th').length) {
+        format = 'thead th';
+      }
+      else if (table.find('tbody tr th').length) {
+        format = 'tbody tr th';
+      }
+      else if (table.find('th').length) {
+        format = 'tr:first th';
+      }
+      else {
+        format = 'tr:first td';
+      }
+
+      $.each(table.find(format), function() {
+        var $heading = $(this);
+        var colspan = parseInt($heading.attr('colspan'), 10) || 1;
+        var row = $heading.closest('tr').index();
+
+        if (!headings[row]) {
+          headings[row] = [];
+        }
+
+        for (var i = 0; i < colspan; i++) {
+          headings[row].push($heading);
+        }
+      });
+
+      // Table Body
+      $.each(table.find('tbody tr'), function() {
+        setupRow($(this), headings, data);
+      });
+
+      // Table Footer
+      $.each(table.find('tfoot tr'), function() {
+        setupRow($(this), headings, data);
+      });
+    };
+
+    var setupRow = function($row, headings, data) {
+      $row.children().each(function() {
+        var $cell = $(this);
+
+        if (($cell.html() === '' || $cell.html() === '&nbsp;') && (!data.showEmptyCells)) {
+          $cell.addClass('bt-hide');
+        }
+        else {
+          var cellIndex = $cell.index();
+          var headingText = '';
+
+          for (var j = 0; j < headings.length; j++) {
+            if (j != 0) {
+              headingText += ': ';
+            }
+
+            var $heading = headings[j][cellIndex];
+            headingText += $heading.text();
+          }
+
+          $cell.attr('data-th', headingText);
+
+          if (data.contentWrap && !$cell.children().hasClass('bt-content')) {
+            $cell.wrapInner('<span class="bt-content" />');
+          }
+        }
+      });
+    };
+
+    var unwrap = function(table) {
+      $.each(table.find('td'), function() {
+        var $cell = $(this);
+        var content = $cell.children('.bt-content').html();
+        $cell.html(content);
+      });
+    };
+
+    var check = function(table, data) {
+      // Only change when table is larger than parent if force
+      // responsive is turned off.
+      if (!data.forceResponsive) {
+        if (table.removeClass('bt').outerWidth() > table.parent().width()) {
+          start(table, data);
+        }
+        else {
+          end(table, data);
+        }
+      }
+      else {
+        if ($(window).width() <= data.breakpoint) {
+          start(table, data);
+        }
+        else {
+          end(table, data);
+        }
+      }
+    };
+
+    var start = function(table, data) {
+      table.addClass('bt');
+
+      if (data.tableWrap) {
+        table.parent('.bt-wrapper').addClass('active');
+      }
+    };
+
+    var end = function(table, data) {
+      table.removeClass('bt');
+
+      if (data.tableWrap) {
+        table.parent('.bt-wrapper').removeClass('active');
+      }
+    };
+
+    var destroy = function(table, data) {
+      table.find('td').removeAttr('data-th');
+
+      if (data.tableWrap) {
+        table.unwrap();
+      }
+
+      if (data.contentWrap) {
+        unwrap(table);
+      }
+
+      table.removeData('basictable');
+    };
+
+    var resize = function(table) {
+      if (table.data('basictable')) {
+        check(table, table.data('basictable'));
+      }
+    };
+
+    // Get table.
+    this.each(function() {
+      var table = $(this);
+
+      // If table has already executed.
+      if (table.length === 0 || table.data('basictable')) {
+        if (table.data('basictable')) {
+          // Destroy basic table.
+          if (options == 'destroy') {
+            destroy(table, table.data('basictable'));
+          }
+          // Start responsive mode.
+          else if (options === 'start') {
+            start(table, table.data('basictable'));
+          }
+          else if (options === 'stop') {
+            end(table, table.data('basictable'));
+          }
+          else {
+            check(table, table.data('basictable'));
+          }
+        }
+        return false;
+      }
+
+      // Extend Settings.
+      var settings = $.extend({}, $.fn.basictable.defaults, options);
+
+      var vars = {
+        breakpoint: settings.breakpoint,
+        contentWrap: settings.contentWrap,
+        forceResponsive: settings.forceResponsive,
+        noResize: settings.noResize,
+        tableWrap: settings.tableWrap,
+        showEmptyCells: settings.showEmptyCells
+      };
+
+      // Initiate
+      table.data('basictable', vars);
+
+      setup(table, table.data('basictable'));
+
+      if (!vars.noResize) {
+        check(table, table.data('basictable'));
+
+        $(window).bind('resize.basictable', function() {
+          resize(table);
+        });
+      }
+    });
+  };
+  $.fn.basictable.defaults = {
+    breakpoint: 568,
+    contentWrap: true,
+    forceResponsive: true,
+    noResize: false,
+    tableWrap: false,
+    showEmptyCells: false
+  };
+})(jQuery);
+
+$(function() {
+	//$('html').removeClass('no-js');
+	$('.responsive').basictable({
+	noResize: true
+	});
+});
+
+/**/
+
+//<![CDATA[
+	$(function () {
+		$(window).scroll(function () {
+			if ($(this).scrollTop() > 100) {
+				$('#gotop').fadeIn();
+			} else {
+				$('#gotop').fadeOut();
+			}
+		});
+		$('#gotop').click(function () {
+			$('body,html').animate({
+				scrollTop: 0
+			}, 800);
+			return false;
+		});
+	});
+	/*
+	$(function()  {
+		$(".tabmenu ul li:first-child a").addClass("sel");
+		$(".cons:not("+$(".tabmenu ul li a").attr("href")+")").hide();
+		$(".tabmenu ul li a").click(function(){
+			$(".tabmenu ul li a").removeClass("sel");
+			$(this).addClass("sel");
+			$(".cons").hide();
+			$($(this).attr("href")).fadeIn();
+			return false;
+		});
+	});*/
+	$(function()  {
+		$(".guide .tab dl:last-child dt a").addClass("sel");
+		$(".viewbox:not("+$(".guide .tab dt a").attr("href")+")").hide();
+		$(".guide .tab dt a").click(function(){
+			$(".guide .tab dt a").removeClass("sel");
+			$(this).addClass("sel");
+			$(".viewbox").hide();
+			$($(this).attr("href")).fadeIn();
+			return false;
+		});
+
+	});
+//]]>
