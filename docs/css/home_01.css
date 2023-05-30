@@ -1251,28 +1251,66 @@ th.title {
 	font-weight: bolder;
 	border:none;
 }
-/* Media Queries for Responsive Styling */
 
+/* Media Queries for Responsive Styling */
+/* 반응형 스타일 */
+
+/* 작은 화면에서의 스타일 */
+@media only screen and (max-width: 600px) {
+	#tabs a {
+		padding: .7em 2.5em;
+		font-size: medium;
+	}
+	
+	.tab-all {
+		width: 90%;
+	}
+	
+	td > img {
+		height: 200px;
+		width: 150px;
+	}
+	
+	th.title {
+		font-size: 20px;
+	}
+}
+
+/* 중간 화면에서의 스타일 */
+@media only screen and (min-width: 601px) and (max-width: 900px) {
+	#tabs a {
+		padding: .7em 3em;
+		font-size: large;
+	}
+}
+
+/* 큰 화면에서의 스타일 */
+@media only screen and (min-width: 901px) {
+	#tabs a {
+		padding: .7em 3.5em;
+		font-size: large;
+	}
+}
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
 	td > img {
-	height: 400px;
-	width: 300px;
+	height: 300px;
+	width: 350px;
 }
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
 td > img {
-	height: 500px;
-	width: 350px;
+	height: 400px;
+	width: 30px;
 }
 }
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
 td > img {
-	height: 600px;
-	width: 400px;
+	height: 300px;
+	width: 200px;
 }
 }
