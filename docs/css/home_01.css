@@ -369,11 +369,12 @@ a:active {
 		height: 40px;
 	}
 }
-@media (max-width: 800px) {
+@media (max-width: 700px) {
 	#menu_up {
 	  display: inline-block; /* 추가: 가로로 배치되도록 설정 */
 	  width: 100%; /* 추가: 가로 폭 100%로 설정 */
 	  padding: 0px; /* 추가: 내부 여백 설정 */
+	  text-align: center;
 	}
 	
 	#menu_up > a {
@@ -430,14 +431,15 @@ a:active {
 	font-family: 'NanumSquareRound', sans-serif;
     font-weight: bold
 }
-@media (max-width: 800px) {
+@media (max-width: 700px) {
 	.login-wrapper {
-	  width: 80%; /* 추가: 창 너비에 맞게 조정 */
-	  max-width: none; /* 추가: 최대 너비 제거 */
-	  right: auto; /* 추가: 오른쪽 여백 제거 */
-	  left: 50%; /* 추가: 왼쪽 여백 50%로 조정 */
-	  transform: translateX(-50%) translateY(-50%); /* 추가: 수평, 수직 중앙 정렬 */
-	}
+		width: 80%; /* 추가: 창 너비에 맞게 조정 */
+		max-width: none; /* 추가: 최대 너비 제거 */
+		right: 50%; /* 수정: 오른쪽 여백 제거 */
+		left: 50%; /* 수정: 왼쪽 여백 50%로 조정 */
+		transform: translateX(-50%) translateY(-50%); /* 추가: 수평, 수직 중앙 정렬 */
+		box-sizing: border-box; /* 추가: 박스 모델 변경 */
+	  }
 }
 .login-wrapper > h2{
     font-size: 30px;
@@ -715,7 +717,7 @@ margin-top: 5px;
 	margin-bottom: 20px;
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 700px) {
 	#left-banner {
 		width: 100%;
 		height: auto;
@@ -942,7 +944,7 @@ margin-top: 5px;
 	filter: alpha(opacity=50);
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 700px) {
 	.carousel img{
 	width: calc(100% / 2);
 	}
@@ -1248,4 +1250,29 @@ th.title {
     font-size: 25px; /* 원하는 글꼴 크기로 변경 */
 	font-weight: bolder;
 	border:none;
+}
+/* Media Queries for Responsive Styling */
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+	td > img {
+	height: 400px;
+	width: 300px;
+}
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+td > img {
+	height: 500px;
+	width: 350px;
+}
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+td > img {
+	height: 600px;
+	width: 400px;
+}
 }
