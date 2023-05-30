@@ -9,7 +9,7 @@
         @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@800&display=swap');
         @import url('https://cdn.rawgit.com/innks/NanumSquareRound/master/nanumsquareround.min.css');
     </style>
-    <title>Document</title>
+    <title>Poly library</title>
 </head>
     
 
@@ -21,10 +21,12 @@
                     <div id="menu01_all">
                         <div id="menu_up">
                             <div id="main-text-wrapper">
-                                <div id="main-text">
-                                    <img src="./image/poly.png" >
-                                    Poly Library
-                                </div>
+                                <a href="./index.html">
+                                    <div id="main-text">
+                                        <img src="./image/poly.png">
+                                        Poly Library
+                                    </div>
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -44,14 +46,14 @@
                     </div>
                     <div id="menu04_all">
                 <div id="menu_up"> 
-                        <a href="/map.html" target="_self">
+                        <a href="map.html" target="_self">
                         도서관 찾기
                     </a> 
                 </div>
             </div>
             <div id="menu05_all">
                 <div id="menu_up"> 
-                    <a href="./search.html" target="_self">
+                    <a href="search.html" target="_self">
                         책 검색	
                     </a> 
                 </div>
@@ -76,14 +78,14 @@
         <br>
         <h2>도서와 함께 그리는 빛나는 미래</h2>
         <h3>14만권 속에서 인생책을 찾아보세요</h3>
-        <form method="post" action="서버의url" id="login-form">
-            <input type="text" name="userName" placeholder="Email">
-            <input type="password" name="userPassword" placeholder="Password">
+        <form id="login-form">
+            <input type="text" name="userName" placeholder="Email" id="username">
+            <input type="password" name="userPassword" placeholder="Password" id="password">
             <label for="remember-check">
-                <input type="checkbox" id="remember-check">아이디 저장하기
+              <input type="checkbox" id="remember-check">아이디 저장하기
             </label>
-            <input type="submit" value="Login">
-        </form>
+            <input type="submit" value="Login" onclick="login(event)">
+          </form>
         <hr>
         <div id="login_icon">
             <img src="image/facebook.png" width="40px">

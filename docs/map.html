@@ -16,21 +16,20 @@
         <div id="left-banner">
           <br><br><br>
           <a href="./home01.html" >
-            <img src="/image/list.png" style="height: 55px; margin-left: 10px; padding:10px;" >
+            <img src="./image/list.png" style="height: 55px; margin-left: 10px; padding:10px;" >
           </a>
           <br><br>
           <a href="./index.html" >
-            <img src="/image/home.png" style="height: 55px; margin-left: 10px; padding:10px;">
+            <img src="./image/home.png" style="height: 55px; margin-left: 10px; padding:10px;">
           </a>
         </div>
         <div class="container-body">
             <div id="top-list">도서관 찾기</div>
             <div id="top-icon">
-                <img src="/image/refresh.png">
-                <img src="/image/bell.png">
+                <img src="./image/refresh.png" id="refresh-icon">
             </div>
             <div id="menu-list">
-                <a href="/map.html">전체</a> | <a href="/home02.html">광명시 도서관</a>
+                <a href="home02.html">광명시 도서관</a>
             </div>
         <br><br><br>
         <!--카카오맵 지도-->
@@ -56,10 +55,18 @@
         <br><br>
         <hr><br><br>
         <div id="address-text">
-            <img src="/image/placeholder.png" style ="height:45px">
+            <img src="./image/placeholder.png" style ="height:45px">
             <h1>경기 광명시 철망산로 46 (우)14245</h1>
         </div>
     </div>
+    <script>
+        const refreshIcon = document.getElementById("refresh-icon");
+
+        refreshIcon.addEventListener("click", function() {
+            location.reload();
+        });
+
+    </script>
         
 </body>
 </html>

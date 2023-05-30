@@ -240,8 +240,6 @@ body {
 
 	line-height: 20px;
 
-	color: #FFF;
-
 	text-align: center;
 
 	text-decoration: none;
@@ -309,7 +307,87 @@ a:active {
 	margin: 0 auto;
 	
 }
+@media only screen and (max-width: 800px) {
+	#wrap_all {
+		height: auto;
+	}
 
+	#wrap {
+		height: auto;
+	}
+
+	#menu_all {
+		height: auto;
+	}
+
+	#menu01_all {
+		width: 100%;
+		height: auto;
+		float: none;
+	}
+
+	#menu02_all {
+		width: 100%;
+		height: auto;
+		float: none;
+	}
+
+	#menu02_all > #menu_up > a {
+		margin-top: 10px;
+		margin-bottom: 10px;
+		display: block;
+	}
+
+	#menu03_all {
+		width: 100%;
+		height: auto;
+		float: none;
+	}
+
+	#menu04_all {
+		width: 100%;
+		height: auto;
+		float: none;
+	}
+
+	#menu05_all {
+		width: 100%;
+		height: auto;
+		float: none;
+	}
+
+	#menu_up {
+		position: relative;
+		margin-bottom: 20px;
+	}
+
+	#main-text {
+		font-size: 30px;
+	}
+
+	#main-text > img {
+		height: 40px;
+	}
+}
+@media (max-width: 800px) {
+	#menu_up {
+	  display: inline-block; /* 추가: 가로로 배치되도록 설정 */
+	  width: 100%; /* 추가: 가로 폭 100%로 설정 */
+	  padding: 0px; /* 추가: 내부 여백 설정 */
+	}
+	
+	#menu_up > a {
+	  font-size: 20px; /* 추가: 폰트 크기 조정 */
+	}
+	
+	.main_text {
+	font-size: 0; /* 추가: 글자 숨김 */
+	}
+	
+	.main_text > img {
+	display: block; /* 추가: 이미지만 보이도록 설정 */
+	}
+}
 @keyframes gradient {
 	0% {
 		background-position: 0% 50%;
@@ -340,19 +418,27 @@ a:active {
 
 .login-wrapper{
     width: 25%;
-    height: 550px;
+    height: 600px;
     padding: 40px;
     box-sizing: border-box;
     background-color: #fff;
     border-radius: 30px;
     position: absolute; /* 수정: 절대 위치 지정 */
     top: 50%; /* 수정: 요소를 수직 중앙으로 위치시킴 */
-    right: 200px; /* 추가: 오른쪽으로 100px 간격 유지 */
+	right: 10%; /* 수정: 오른쪽 여백 10%로 조정 */
     transform: translateY(-50%); /* 수정: 수직 중앙 정렬을 위한 이동 */
 	font-family: 'NanumSquareRound', sans-serif;
     font-weight: bold
 }
-
+@media (max-width: 800px) {
+	.login-wrapper {
+	  width: 80%; /* 추가: 창 너비에 맞게 조정 */
+	  max-width: none; /* 추가: 최대 너비 제거 */
+	  right: auto; /* 추가: 오른쪽 여백 제거 */
+	  left: 50%; /* 추가: 왼쪽 여백 50%로 조정 */
+	  transform: translateX(-50%) translateY(-50%); /* 추가: 수평, 수직 중앙 정렬 */
+	}
+}
 .login-wrapper > h2{
     font-size: 30px;
     color: #6A24FE;
@@ -504,7 +590,7 @@ a:active {
 	padding:50px;
 	font-family: 'NanumSquareRound', sans-serif;
     font-weight:800;
-    font-size: 40px;
+    font-size: 50px;
 	background: -webkit-linear-gradient(-70deg, #db469f 0%, #2188ff 100%);
     -webkit-background-clip: text;
     background-clip: text;
@@ -549,25 +635,150 @@ a:active {
 }
 #top-icon > img{
 	height: 30px;
-  	margin-left: 10px;
+	margin-left: 10px;
+}
+  /* .book-image 클래스의 스타일 정의 */
+.book-image {
+	width: 240px;
+	height: 370px;
+	border-radius: 30px;
+	transition: opacity 0.3s ease;
 }
 
-#book-list{
-	width:90%;
+/* .book-group 요소의 스타일 정의 */
+.book-group {
+	display: flex;
+    justify-content: center;
+    margin-bottom: 20px; /* 한 행 사이에 간격을 주기 위한 마진 설정 */
+    width: 100%;
+	padding:30px;
+}
+
+/* #book-list 요소의 스타일 정의 */
+#book-list {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+/* #book-list 내부의 이미지 스타일 정의 */
+#book-list .book-container img {
+	width: 240px; /* 이미지의 너비 설정 */
+	height: 300px; /* 이미지의 높이는 자동으로 조정 */
+	margin: 10px; /* 이미지 간의 간격 설정 */
+	border-radius: 30px;
+	transition: opacity 0.3s ease; /* 호버 효과의 전환 시간과 속도 곡선 설정 */
+}
+.book-title {
+	font-weight: bolder;
+	font-size: large;
+	margin-top: 10px;
 	text-align: center;
-}
-#book-list > a > img{
-	width:300px;
-	height:400px;
-	padding:20px;
-	border-radius: 50px;
-}
-#book-list > a > img:hover{
-	opacity: 0.5;
-	filter: alpha(opacity=50);
-
+	font-family: 'NanumSquareRound', sans-serif;
 }
 
+.book-issued-date {
+	margin-top: 5px;
+	text-align: center;
+	font-family: 'NanumSquareRound', sans-serif;
+}
+/* #book-list 내부의 이미지 호버 효과 스타일 정의 */
+#book-list .book-container:hover img {
+opacity: 0.5;
+filter: alpha(opacity=50);
+}
+
+/* #book-list 내부의 제목 스타일 정의 */
+#book-list .book-container .book-title {
+font-weight: bold;
+margin-top: 10px;
+}
+
+/* #book-list 내부의 발행일 스타일 정의 */
+#book-list .book-container .book-issued-date {
+margin-top: 5px;
+}
+
+#top-list {
+	font-family: 'Nanum Square Round', sans-serif;
+	font-size: 24px;
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+
+.book-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 10px;
+}
+#menu-list {
+	margin-bottom: 20px;
+}
+
+@media only screen and (max-width: 800px) {
+	#left-banner {
+		width: 100%;
+		height: auto;
+		padding: 20px;
+	}
+
+	#left-banner > img {
+		height: 40px;
+	}
+
+	#top-list {
+		width: 100%;
+		padding: 20px;
+		font-size: 30px;
+		height:30px;
+	}
+
+	.container {
+		flex-direction: column;
+	}
+
+	#menu-list {
+		width: 100%;
+		margin: 0;
+		padding: 20px;
+		font-size: 18px;
+	}
+
+	#top-icon {
+		width: 100%;
+		padding: 20px;
+	}
+
+	#top-icon > img {
+		height: 20px;
+	}
+
+	.book-group {
+		padding: 20px;
+	}
+
+	#book-list .book-container img {
+		width: 100%;
+		height: auto;
+		margin: 10px 0;
+	}
+
+	.book-image {
+		width: 100%;
+		height: auto;
+		border-radius: 20px;
+	}
+
+	.book-title {
+		margin-top: 5px;
+		font-size: medium;
+	}
+
+	.book-issued-date {
+		margin-top: 2px;
+		font-size: small;
+	}
+}
 /*지도페이지*/
 #daumRoughmapContainer1684904682760{
 	margin: 0 auto;
@@ -883,6 +1094,34 @@ transition: all 400ms ease;
 	color: #fff !important;
 }
 
+
+/* 검색 결과 제목 글꼴 */
+h2 {
+    font-family: 'Nanum Gothic', sans-serif;
+    font-weight: bold;
+    font-size: 25px;
+	margin: 0 auto;
+	text-align: center;
+	padding:10px;
+}
+
+/* 발행일과 로컬 ID 글꼴 */
+p {
+    font-family: 'Nanum Gothic', sans-serif;
+    font-size: 18px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.booksearch-image {
+    display: block;
+    margin: 0 auto;
+	width:30%;
+	height:auto;
+	border: 1px solid #666;
+	border-radius: 70px;
+}
+
 /*탭메뉴*/
 
 #tabs {
@@ -956,4 +1195,57 @@ transition: all 400ms ease;
 
 .tab-all .tab-pane.active {
 display: block;
+}
+/* event css */
+#tab1, #tab2{
+	font-family: 'NanumSquareRound', sans-serif;
+	font-size: large;
+}
+#tab1 > img, #tab2 > img, #tab4 > img{
+	border-radius: 50px;
+}
+#tab3, #tab4, #tab5{
+	font-family: 'NanumSquareRound', sans-serif;
+	font-size:large;
+}
+#tab3 > li, h4 , #tab4 > li{
+	text-align: left;
+	padding:5px;
+}
+#tab3 > h4, #tab3 > h2, #tab4 > h4, #tab4 > h2, #tab5 > h2{
+	color:#6A24FE;
+	font-family: 'NanumSquareRound', sans-serif;
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th {
+    border: 1px solid #dddddd;
+    padding: 8px;
+    text-align: left;
+}
+td {
+	border: 1px solid #dddddd;
+    padding: 8px;
+}
+th {
+    background-color: #f2f2f2;
+}
+tr.book-row {
+    height: 100px;
+}
+td > img{
+    height: 300px;
+	width: 200px;
+	text-align: center;
+	margin: 0 auto;
+}
+th.title {
+    background-color: transparent;
+    color: #6610f2; /* 원하는 색상으로 변경 */
+    font-size: 25px; /* 원하는 글꼴 크기로 변경 */
+	font-weight: bolder;
+	border:none;
 }
