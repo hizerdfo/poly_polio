@@ -9,6 +9,8 @@
         @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@800&display=swap');
         @import url('https://cdn.rawgit.com/innks/NanumSquareRound/master/nanumsquareround.min.css');
     </style>
+    <script src="https://t1.kakaocdn.net/kakao_js_sdk/${VERSION}/kakao.min.js"
+    integrity="${INTEGRITY_VALUE}" crossorigin="anonymous"></script>
     <title>도서관 찾기</title>
 </head>
 <body>
@@ -36,7 +38,7 @@
         <!-- * 카카오맵 - 지도퍼가기 -->
         <!-- 1. 지도 노드 -->
         <div id="daumRoughmapContainer1684904682760" class="root_daum_roughmap root_daum_roughmap_landing"></div>
-
+        
         <!--
             2. 설치 스크립트
             * 지도 퍼가기 서비스를 2개 이상 넣을 경우, 설치 스크립트는 하나만 삽입합니다.
@@ -53,6 +55,16 @@
             }).render();
         </script>
         <br><br>
+
+        <div id="map"></div>
+        <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=b4132dd228b627edd292647bf10b52b7"></script>
+        <script>const container = document.getElementById('map'); //지도를 담을 영역의 DOM 레퍼런스
+            let options = { //지도를 생성할 때 필요한 기본 옵션
+                center: new kakao.maps.LatLng(33.450701, 126.570667), //지도의 중심좌표.
+                level: 3 //지도의 레벨(확대, 축소 정도)
+            };
+            let map = new kakao.maps.Map(container, options); //지도 생성 및 객체 리턴
+        </script>
         <hr><br><br>
         <div id="address-text">
             <img src="./image/placeholder.png" style ="height:45px">
