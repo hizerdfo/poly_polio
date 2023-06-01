@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+        .pagination {
+            margin-top: 10px;
+        }
+
+        .pagination button {
+            padding: 5px 10px;
+            margin-right: 5px;
+            cursor: pointer;
+        }
+        table {
+            font-size: x-large;
+            border-collapse: collapse;
+            text-align: center;
+            
+        }
+        .pagination button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        .odd-row {
+            background-color: #999;
+        }
+        .even-row {
+            background-color: #ffffff;
+        }
+        th,
+        td {
+            height: 40px;
+        }
+
+        thead {
+            background-color: black;
+            color: white;
+        }
+
+        .selected, .odd-row.selected, .even-row.selected {
+            background-color: yellow !important;
+        }
+    </style>
+</head>
+<body>
+    <table class="text-center">
+        <thead>
+            <tr>
+                <th>
+                    <input type="checkbox" id="selectAll" onchange="toggleAllCheckboxes()">
+                </th>
+                <th>ID</th>
+                <th>Title</th>
+            </tr>
+        </thead>
+        <tbody id="tableBody" onmousedown="enableDrag(event)">
+        </tbody>
+    </table>
+
+    <div id="pagination" class="text-center pagination">
+    </div>
+
+    <script>
+        const itemsPerPage = 10;
+        const dataUrl = 'forum.json';
+        let currentPage = 0;
+        let data = [];
+        let selectedCheckboxes = [];
+
+        const tableBody = document.getElementById('tableBody');
+        const paginationContainer = document.getElementById('pagination');
+
+        function fetchData() {
+            fetch(dataUrl)
+            .then((response) => {
+                if (!response.ok) {
+                    throw new Error('Network response was not OK');
+                }
+                return response.json();
+            })
+            .then((jsonData) => {
+                data = jsonData;
+                displayData();
+            })
+            .catch((error) => {
+                console.log('Error:', error);
+            });
+        }
+
+        function displayData() {
+            const start = currentPage * itemsPerPage;
+            const end = start + itemsPerPage;
+            const paginatedData = data.slice(start, end);
+
+            tableBody.innerHTML = '';
+
+            paginatedData.forEach((item, index) => {
+                const row = document.createElement('tr');
+                row.className = index % 2 === 0 ? 'even-row' : 'odd-row';
+
+                // Make the row draggable
+                row.draggable = true;
+                row.addEventListener('dragstart', (event) => dragStart(event, row));
+
+                // Checkbox cell
+                const checkboxCell = document.createElement('td');
+                const checkbox = document.createElement('input');
+                checkbox.type = 'checkbox';
+                checkboxCell.appendChild(checkbox);
+                row.appendChild(checkboxCell);
+
+                // ID cell
+                const idCell = document.createElement('td');
+                idCell.textContent = item.id;
+                row.appendChild(idCell);
+
+                // Title cell
+                const titleCell = document.createElement('td');
+                titleCell.textContent = item.title;
+                row.appendChild(titleCell);
+
+                tableBody.appendChild(row);
+            });
+
+            renderPagination();
+        }
+
+        function renderPagination() {
+            const totalPages = Math.ceil(data.length / itemsPerPage);
+
+            paginationContainer.innerHTML = '';
+
+            for (let i = 0; i < totalPages; i++) {
+                const button = document.createElement('button');
+                button.textContent = i + 1;
+                button.addEventListener('click', () => {
+                    currentPage = i;
+                    displayData();
+                });
+                paginationContainer.appendChild(button);
+            }
+        }
+
+        function toggleAllCheckboxes() {
+            const checkboxes = tableBody.querySelectorAll('input[type="checkbox"]');
+            const selectAllCheckbox = document.getElementById('selectAll');
+            const isChecked = selectAllCheckbox.checked;
+
+            checkboxes.forEach((checkbox) => {
+                checkbox.checked = isChecked;
+                toggleCheckbox(checkbox);
+            });
+        }
+
+        function enableDrag(event) {
+            if (event.target.type === 'checkbox') {
+                return;
+            }
+            
+            const checkboxes = tableBody.querySelectorAll('input[type="checkbox"]');
+            checkboxes.forEach((checkbox) => {
+                checkbox.addEventListener('change', () => toggleCheckbox(checkbox));
+            });
+        }
+
+        function toggleCheckbox(checkbox) {
+            const row = checkbox.parentNode.parentNode;
+            if (checkbox.checked) {
+                row.classList.add('selected');
+                selectedCheckboxes.push(checkbox);
+            } else {
+                row.classList.remove('selected');
+                const index = selectedCheckboxes.indexOf(checkbox);
+                if (index > -1) {
+                    selectedCheckboxes.splice(index, 1);
+                }
+            }
+        }
+
+        function dragStart(event, row) {
+            const checkbox = row.querySelector('input[type="checkbox"]');
+    if (checkbox.checked) {
+        event.dataTransfer.effectAllowed = 'move';
+        event.dataTransfer.setData('text/html', row.innerHTML);
+        row.classList.add('dragging');
+        draggedElement = row;
+    }
+        }
+
+        function dragOver(event) {
+            event.preventDefault();
+            const targetElement = event.target.closest('tr');
+            if (targetElement && targetElement !== draggedElement) {
+                const currentIndex = Array.from(targetElement.parentNode.children).indexOf(targetElement);
+                if (currentIndex > prevIndex) {
+                    targetElement.parentNode.insertBefore(draggedElement, targetElement.nextSibling);
+                } else {
+                    targetElement.parentNode.insertBefore(draggedElement, targetElement);
+                }
+                prevIndex = currentIndex;
+            }
+        }
+
+        function dragEnd(event) {
+            draggedElement.classList.remove('dragging');
+            draggedElement = null;
+            prevIndex = null;
+        }
+
+        const sortable = document.getElementById('sortable');
+        let draggedElement = null;
+        let prevIndex = null;
+
+        tableBody.addEventListener('dragover', dragOver);
+        tableBody.addEventListener('dragend', dragEnd);
+
+        fetchData();
+    </script>
+</body>
+</html>
