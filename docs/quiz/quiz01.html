@@ -162,19 +162,17 @@
         }
 
         function enableDrag(event) {
-            if (event.target.type === 'checkbox') {
-                return;
-            }
-            
-            const checkboxes = tableBody.querySelectorAll('input[type="checkbox"]');
-            checkboxes.forEach((checkbox) => {
-                checkbox.addEventListener('change', () => toggleCheckbox(checkbox));
-            });
-        }
+    if (event.target.type === 'checkbox') {
+        const checkbox = event.target;
+        checkbox.addEventListener('change', () => toggleCheckbox(checkbox));
+    }
+}
 
         function toggleCheckbox(checkbox) {
             const row = checkbox.parentNode.parentNode;
-            if (checkbox.checked) {
+            const isChecked = checkbox.checked;
+
+            if (isChecked) {
                 row.classList.add('selected');
                 selectedCheckboxes.push(checkbox);
             } else {
