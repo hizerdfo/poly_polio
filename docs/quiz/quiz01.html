@@ -125,9 +125,13 @@
                 row.appendChild(titleCell);
 
                 tableBody.appendChild(row);
-            });
+        });
 
-            renderPagination();
+    // 초기화 코드 추가
+    const selectAllCheckbox = document.getElementById('selectAll');
+    selectAllCheckbox.checked = false;
+
+    renderPagination();
         }
 
         function renderPagination() {
