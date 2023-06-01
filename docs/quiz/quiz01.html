@@ -186,12 +186,12 @@
 
         function dragStart(event, row) {
             const checkbox = row.querySelector('input[type="checkbox"]');
-    if (checkbox.checked) {
-        event.dataTransfer.effectAllowed = 'move';
-        event.dataTransfer.setData('text/html', row.innerHTML);
-        row.classList.add('dragging');
-        draggedElement = row;
-    }
+            if (checkbox.checked) {
+                event.dataTransfer.effectAllowed = 'move';
+                event.dataTransfer.setData('text/html', row.innerHTML);
+                row.classList.add('dragging');
+                draggedElement = row;
+            }
         }
 
         function dragOver(event) {
@@ -199,12 +199,23 @@
             const targetElement = event.target.closest('tr');
             if (targetElement && targetElement !== draggedElement) {
                 const currentIndex = Array.from(targetElement.parentNode.children).indexOf(targetElement);
+                const draggedIndex = Array.from(targetElement.parentNode.children).indexOf(draggedElement);
+
                 if (currentIndex > prevIndex) {
                     targetElement.parentNode.insertBefore(draggedElement, targetElement.nextSibling);
                 } else {
                     targetElement.parentNode.insertBefore(draggedElement, targetElement);
                 }
                 prevIndex = currentIndex;
+
+                // Update row classes
+                const rows = Array.from(tableBody.getElementsByTagName('tr'));
+                rows.forEach((row, index) => {
+                    row.className = index % 2 === 0 ? 'even-row' : 'odd-row';
+                    if (row.classList.contains('selected')) {
+                        row.classList.add('selected');
+                    }
+                });
             }
         }
 
@@ -212,6 +223,12 @@
             draggedElement.classList.remove('dragging');
             draggedElement = null;
             prevIndex = null;
+
+            // Update selected checkboxes' color
+            selectedCheckboxes.forEach((checkbox) => {
+                const row = checkbox.parentNode.parentNode;
+                row.classList.add('selected');
+            });
         }
 
         const sortable = document.getElementById('sortable');
